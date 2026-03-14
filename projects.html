@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Niragi — Projects</title>
+  <link rel="icon" type="image/png" href="../assets/profile/favicon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<div id="transition-overlay">
+  <div class="t-panel"></div>
+  <div class="t-panel"></div>
+  <div class="t-panel"></div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo"><span>Niragi.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme"><i class="fas fa-sun"></i></button>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="container page-header-inner">
+    <div class="s-tag">Work</div>
+    <h1 class="grad-text">All Projects</h1>
+    <p>Things I've designed and built — from full-stack web apps to IoT systems and design systems.</p>
+  </div>
+</div>
+
+<div class="stripe-divider"></div>
+
+<section class="section">
+  <div class="container">
+
+    <div class="filter-row reveal">
+      <button class="f-btn active" data-tag="all">All</button>
+      <button class="f-btn" data-tag="React">React</button>
+      <button class="f-btn" data-tag="Java">Java</button>
+      <button class="f-btn" data-tag="Python">Python</button>
+      <button class="f-btn" data-tag="PHP">PHP</button>
+      <button class="f-btn" data-tag="Figma">Figma</button>
+      <button class="f-btn" data-tag="Arduino">Arduino</button>
+      <button class="f-btn" data-tag="Android">Android</button>
+    </div>
+
+    <div class="proj-grid reveal-stagger">
+
+      <div class="proj-card" data-tags="React Spring Boot Java">
+        <div class="proj-thumb"><div class="proj-thumb-bg proj-thumb-bg-1"></div><img src="../assets/projects/file-monitoring.png" alt="File Monitoring" onerror="this.style.display='none'"><div class="proj-thumb-shade"></div></div>
+        <div class="proj-body">
+          <h3 class="proj-title">File Behavior Monitoring System</h3>
+          <p class="proj-desc">Real-time security system monitoring file activity and detecting suspicious behavior using React and Spring Boot with WatchService API.</p>
+          <div class="pill-row"><span class="proj-pill">React</span><span class="proj-pill">Spring Boot</span><span class="proj-pill">Java</span></div>
+          <div class="proj-links"><a href="#" class="proj-link"><i class="fab fa-github"></i> Code</a><a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i> Demo</a></div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-tags="Python XGBoost HTML CSS">
+        <div class="proj-thumb"><div class="proj-thumb-bg proj-thumb-bg-2"></div><img src="../assets/projects/stress-prediction.png" alt="Stress Prediction" onerror="this.style.display='none'"><div class="proj-thumb-shade"></div></div>
+        <div class="proj-body">
+          <h3 class="proj-title">Mental Health Stress Prediction</h3>
+          <p class="proj-desc">ML research evaluating multiple algorithms including XGBoost for the most accurate stress prediction model.</p>
+          <div class="pill-row"><span class="proj-pill">Python</span><span class="proj-pill">XGBoost</span><span class="proj-pill">HTML/CSS</span></div>
+          <div class="proj-links"><a href="#" class="proj-link"><i class="fab fa-github"></i> Code</a><a href="#" class="proj-link"><i class="fas fa-file-alt"></i> Paper</a></div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-tags="HTML CSS JavaScript PHP">
+        <div class="proj-thumb"><div class="proj-thumb-bg proj-thumb-bg-3"></div><img src="../assets/projects/eshop.png" alt="E-Shop" onerror="this.style.display='none'"><div class="proj-thumb-shade"></div></div>
+        <div class="proj-body">
+          <h3 class="proj-title">E-Shop Web Application</h3>
+          <p class="proj-desc">Full-stack e-commerce platform with cart management, user auth, and complete order processing.</p>
+          <div class="pill-row"><span class="proj-pill">HTML5</span><span class="proj-pill">JavaScript</span><span class="proj-pill">PHP</span></div>
+          <div class="proj-links"><a href="#" class="proj-link"><i class="fab fa-github"></i> Code</a><a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i> Demo</a></div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-tags="Java Firebase Android">
+        <div class="proj-thumb"><div class="proj-thumb-bg proj-thumb-bg-4"></div><img src="../assets/projects/pizza-app.png" alt="Pizza App" onerror="this.style.display='none'"><div class="proj-thumb-shade"></div></div>
+        <div class="proj-body">
+          <h3 class="proj-title">Pizza Ordering Android App</h3>
+          <p class="proj-desc">Mobile app for browsing pizzas, placing orders, and managing customer data with Firebase backend.</p>
+          <div class="pill-row"><span class="proj-pill">Java</span><span class="proj-pill">Firebase</span><span class="proj-pill">Android</span></div>
+          <div class="proj-links"><a href="#" class="proj-link"><i class="fab fa-github"></i> Code</a><a href="#" class="proj-link"><i class="fas fa-download"></i> APK</a></div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-tags="Java Swing MySQL">
+        <div class="proj-thumb"><div class="proj-thumb-bg proj-thumb-bg-1"></div><img src="../assets/projects/car-showroom.png" alt="Car Showroom" onerror="this.style.display='none'"><div class="proj-thumb-shade"></div></div>
+        <div class="proj-body">
+          <h3 class="proj-title">Online Car Showroom Management</h3>
+          <p class="proj-desc">Desktop app for managing car inventory, customer details, and showroom operations with Java Swing.</p>
+          <div class="pill-row"><span class="proj-pill">Java</span><span class="proj-pill">Swing</span><span class="proj-pill">MySQL</span></div>
+          <div class="proj-links"><a href="#" class="proj-link"><i class="fab fa-github"></i> Code</a><a href="#" class="proj-link"><i class="fas fa-download"></i> Download</a></div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-tags="Java SQLite Oracle">
+        <div class="proj-thumb"><div class="proj-thumb-bg proj-thumb-bg-2"></div><img src="../assets/projects/finance.png" alt="Finance" onerror="this.style.display='none'"><div class="proj-thumb-shade"></div></div>
+        <div class="proj-body">
+          <h3 class="proj-title">Personal Finance Management</h3>
+          <p class="proj-desc">Application for tracking income, expenses, and financial records with SQLite and Oracle Database.</p>
+          <div class="pill-row"><span class="proj-pill">Java</span><span class="proj-pill">SQLite</span><span class="proj-pill">Oracle</span></div>
+          <div class="proj-links"><a href="#" class="proj-link"><i class="fab fa-github"></i> Code</a><a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i> Demo</a></div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-tags="Arduino C++ Sensors">
+        <div class="proj-thumb"><div class="proj-thumb-bg proj-thumb-bg-3"></div><img src="../assets/projects/rice-robot.png" alt="Rice Robot" onerror="this.style.display='none'"><div class="proj-thumb-shade"></div></div>
+        <div class="proj-body">
+          <h3 class="proj-title">Automated Rice Cooking Robot</h3>
+          <p class="proj-desc">Smart robot automating rice cooking using sensors, temperature control, and Arduino microcontroller.</p>
+          <div class="pill-row"><span class="proj-pill">Arduino</span><span class="proj-pill">C++</span><span class="proj-pill">Sensors</span></div>
+          <div class="proj-links"><a href="#" class="proj-link"><i class="fab fa-github"></i> Code</a><a href="#" class="proj-link"><i class="fas fa-video"></i> Video</a></div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-tags="IoT Arduino Sensors">
+        <div class="proj-thumb"><div class="proj-thumb-bg proj-thumb-bg-4"></div><img src="../assets/projects/landslide.png" alt="Landslide" onerror="this.style.display='none'"><div class="proj-thumb-shade"></div></div>
+        <div class="proj-body">
+          <h3 class="proj-title">Landslide Early Warning System</h3>
+          <p class="proj-desc">IoT system monitoring environmental conditions with sensors to provide early landslide risk alerts.</p>
+          <div class="pill-row"><span class="proj-pill">IoT</span><span class="proj-pill">Arduino</span><span class="proj-pill">Sensors</span></div>
+          <div class="proj-links"><a href="#" class="proj-link"><i class="fab fa-github"></i> Code</a><a href="#" class="proj-link"><i class="fas fa-file-alt"></i> Docs</a></div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-tags="Figma Wireframing Prototyping">
+        <div class="proj-thumb"><div class="proj-thumb-bg proj-thumb-bg-1"></div><img src="../assets/projects/clothing-store.png" alt="Clothing Store" onerror="this.style.display='none'"><div class="proj-thumb-shade"></div></div>
+        <div class="proj-body">
+          <h3 class="proj-title">Clothing Store Management UI</h3>
+          <p class="proj-desc">Complete UI/UX design system for a clothing store, including wireframes, prototypes, and documentation.</p>
+          <div class="pill-row"><span class="proj-pill">Figma</span><span class="proj-pill">Wireframing</span><span class="proj-pill">Prototyping</span></div>
+          <div class="proj-links"><a href="#" class="proj-link"><i class="fab fa-figma"></i> Design</a><a href="#" class="proj-link"><i class="fas fa-file-alt"></i> Case Study</a></div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-tags="HTML CSS JavaScript">
+        <div class="proj-thumb"><div class="proj-thumb-bg proj-thumb-bg-2"></div><img src="../assets/projects/tech-website.png" alt="Tech Website" onerror="this.style.display='none'"><div class="proj-thumb-shade"></div></div>
+        <div class="proj-body">
+          <h3 class="proj-title">New Tech Website</h3>
+          <p class="proj-desc">Modern responsive website showcasing technology trends with blog posts, tech reviews, and interactive UI.</p>
+          <div class="pill-row"><span class="proj-pill">HTML5</span><span class="proj-pill">CSS3</span><span class="proj-pill">JavaScript</span></div>
+          <div class="proj-links"><a href="#" class="proj-link"><i class="fab fa-github"></i> Code</a><a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i> Live</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <p class="foot-copy">&copy; 2026 Niragi Kodagoda · All rights reserved.</p>
+    <div class="foot-socs">
+      <a href="https://github.com/aushadhini" target="_blank" class="soc"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/niragi-kodagoda-8b40b3288/" target="_blank" class="soc"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:niragiaushadhini@gmail.com" class="soc"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+
+<button id="btt" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+<script src="../js/main.js"></script>
+</body>
+</html>
