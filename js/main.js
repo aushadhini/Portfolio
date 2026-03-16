@@ -1,6 +1,5 @@
 /* ============================================================
    NIRAGI KODAGODA — PORTFOLIO JS
-   Fixed page transitions + horizontal project scroll
    ============================================================ */
 
 (function () {
@@ -92,17 +91,19 @@
 
     /* ── THEME TOGGLE ────────────────────────────────────── */
     const themeBtn = document.getElementById('themeBtn');
-    const savedTheme = localStorage.getItem('nk-theme') || 'dark';
-    if (savedTheme === 'light') {
-      document.body.classList.add('light');
+    const savedTheme = localStorage.getItem('nk-theme') || 'light';
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+      if (themeBtn) themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
       if (themeBtn) themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
     }
     if (themeBtn) {
       themeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('light');
-        const isLight = document.body.classList.contains('light');
-        localStorage.setItem('nk-theme', isLight ? 'light' : 'dark');
-        themeBtn.innerHTML = isLight ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+        document.body.classList.toggle('dark');
+        const isDark = document.body.classList.contains('dark');
+        localStorage.setItem('nk-theme', isDark ? 'dark' : 'light');
+        themeBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
       });
     }
 
@@ -165,14 +166,14 @@
     const barObs = new IntersectionObserver(es => {
       es.forEach(e => {
         if (e.isIntersecting) {
-          e.target.querySelectorAll('.bar-fill, .pro-bar-fill').forEach(f => {
+          e.target.querySelectorAll('.bar-fill, .prof-bar-fill').forEach(f => {
             f.style.width = (f.dataset.pct || 0) + '%';
           });
           barObs.unobserve(e.target);
         }
       });
     }, { threshold: 0.3 });
-    document.querySelectorAll('#skillBars, .skill-bars, .pro-bars').forEach(el => barObs.observe(el));
+    document.querySelectorAll('#skillBars, .skill-bars, #profBars, .prof-grid').forEach(el => barObs.observe(el));
 
     /* ── PROJECT FILTER ──────────────────────────────────── */
     document.querySelectorAll('.f-btn').forEach(btn => {
@@ -183,10 +184,10 @@
         document.querySelectorAll('.proj-card').forEach(c => {
           const tags = (c.dataset.tags || '').toLowerCase();
           const show = tag === 'all' || tags.includes(tag.toLowerCase());
-          c.style.opacity      = show ? '1' : '0.12';
-          c.style.transform    = show ? '' : 'scale(0.96)';
-          c.style.pointerEvents= show ? '' : 'none';
-          c.style.transition   = 'opacity 0.3s, transform 0.3s';
+          c.style.opacity       = show ? '1' : '0.12';
+          c.style.transform     = show ? '' : 'scale(0.96)';
+          c.style.pointerEvents = show ? '' : 'none';
+          c.style.transition    = 'opacity 0.3s, transform 0.3s';
         });
       });
     });
@@ -202,11 +203,11 @@
         scrollLeft = grid.scrollLeft;
       });
       grid.addEventListener('mouseleave', () => { isDown = false; grid.classList.remove('active'); });
-      grid.addEventListener('mouseup', () => { isDown = false; grid.classList.remove('active'); });
-      grid.addEventListener('mousemove', e => {
+      grid.addEventListener('mouseup',    () => { isDown = false; grid.classList.remove('active'); });
+      grid.addEventListener('mousemove',  e => {
         if (!isDown) return;
         e.preventDefault();
-        const x = e.pageX - grid.offsetLeft;
+        const x    = e.pageX - grid.offsetLeft;
         const walk = (x - startX) * 1.5;
         grid.scrollLeft = scrollLeft - walk;
       });
@@ -215,13 +216,35 @@
     /* ── PROJ NAV BUTTONS ────────────────────────────────── */
     document.querySelectorAll('.proj-nav-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        const grid = btn.closest('section, .section')?.querySelector('.proj-grid')
+        // find nearest proj-grid — check inside same section/wrapper first
+        const wrapper = btn.closest('.proj-nav')?.nextElementSibling;
+        const grid = wrapper?.querySelector('.proj-grid')
+                  || btn.closest('section, .section, div')?.querySelector('.proj-grid')
                   || document.querySelector('.proj-grid');
         if (!grid) return;
         const dir = btn.dataset.dir;
-        const scrollAmt = 300;
-        grid.scrollBy({ left: dir === 'next' ? scrollAmt : -scrollAmt, behavior: 'smooth' });
+        const cardWidth = grid.querySelector('.proj-card')?.offsetWidth || 340;
+        const gap = 24; // 1.5rem
+        grid.scrollBy({ left: dir === 'next' ? (cardWidth + gap) : -(cardWidth + gap), behavior: 'smooth' });
       });
+    });
+
+
+
+    /* ── UPDATE NAV ARROW STATES ─────────────────────────── */
+    document.querySelectorAll('.proj-grid').forEach(grid => {
+      const navEl = grid.closest('section, .section, div')?.querySelector('.proj-nav');
+      if (!navEl) return;
+      const prevBtn = navEl.querySelector('[data-dir="prev"]');
+      const nextBtn = navEl.querySelector('[data-dir="next"]');
+
+      function updateBtns() {
+        if (prevBtn) prevBtn.disabled = grid.scrollLeft <= 0;
+        if (nextBtn) nextBtn.disabled = grid.scrollLeft >= grid.scrollWidth - grid.clientWidth - 2;
+      }
+
+      grid.addEventListener('scroll', updateBtns, { passive: true });
+      setTimeout(updateBtns, 300);
     });
 
     /* ── BACK TO TOP ─────────────────────────────────────── */
@@ -239,7 +262,7 @@
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        const btn = form.querySelector('button[type="submit"]');
+        const btn  = form.querySelector('button[type="submit"]');
         const orig = btn.innerHTML;
         btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
         btn.style.background = 'linear-gradient(135deg,#6366f1,#22c55e)';
@@ -264,4 +287,3 @@
   }); // DOMContentLoaded
 
 })();
-
