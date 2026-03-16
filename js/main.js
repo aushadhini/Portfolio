@@ -1,6 +1,6 @@
 /* ============================================================
    NIRAGI KODAGODA — PORTFOLIO JS
-   Fixed page transitions + unified behaviour
+   Fixed page transitions + horizontal project scroll
    ============================================================ */
 
 (function () {
@@ -39,29 +39,6 @@
   document.addEventListener('DOMContentLoaded', () => {
 
     playEnter();
-
-    /* ── CURSOR ──────────────────────────────────────────── */
-     /* ── const dot  = document.getElementById('cursor-dot');
-    const ring = document.getElementById('cursor-ring');
-
-    let mx = 0, my = 0, rx = 0, ry = 0;
-
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      if (dot) { dot.style.left = mx + 'px'; dot.style.top = my + 'px'; }
-    });
-
-    (function animRing() {
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      if (ring) { ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; }
-      requestAnimationFrame(animRing);
-    })();
-
-    document.querySelectorAll('a,button,.chip,.proj-card,.glass-card,.cert-card,.info-chip,.soc,.f-btn,.aq-stat,.foot-soc').forEach(el => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
-    });
 
     /* ── NAV SCROLL STATE ────────────────────────────────── */
     const navbar = document.querySelector('nav');
@@ -214,6 +191,39 @@
       });
     });
 
+    /* ── HORIZONTAL DRAG SCROLL ──────────────────────────── */
+    document.querySelectorAll('.proj-grid').forEach(grid => {
+      let isDown = false, startX, scrollLeft;
+
+      grid.addEventListener('mousedown', e => {
+        isDown = true;
+        grid.classList.add('active');
+        startX = e.pageX - grid.offsetLeft;
+        scrollLeft = grid.scrollLeft;
+      });
+      grid.addEventListener('mouseleave', () => { isDown = false; grid.classList.remove('active'); });
+      grid.addEventListener('mouseup', () => { isDown = false; grid.classList.remove('active'); });
+      grid.addEventListener('mousemove', e => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - grid.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        grid.scrollLeft = scrollLeft - walk;
+      });
+    });
+
+    /* ── PROJ NAV BUTTONS ────────────────────────────────── */
+    document.querySelectorAll('.proj-nav-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const grid = btn.closest('section, .section')?.querySelector('.proj-grid')
+                  || document.querySelector('.proj-grid');
+        if (!grid) return;
+        const dir = btn.dataset.dir;
+        const scrollAmt = 300;
+        grid.scrollBy({ left: dir === 'next' ? scrollAmt : -scrollAmt, behavior: 'smooth' });
+      });
+    });
+
     /* ── BACK TO TOP ─────────────────────────────────────── */
     const btt = document.getElementById('btt');
     if (btt) {
@@ -232,7 +242,7 @@
         const btn = form.querySelector('button[type="submit"]');
         const orig = btn.innerHTML;
         btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-        btn.style.background = 'linear-gradient(135deg,#5e8b6e,#3d9b8a)';
+        btn.style.background = 'linear-gradient(135deg,#6366f1,#22c55e)';
         btn.disabled = true;
         setTimeout(() => {
           btn.innerHTML = orig;
