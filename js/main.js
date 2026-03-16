@@ -58,7 +58,7 @@
     });
 
     if (currentFile === 'index.html' || currentFile === '') {
-      const sections = ['home','about','skills','projects','certs','contact'];
+      const sections = ['home','about','skills','services','projects','certs','contact'];
       window.addEventListener('scroll', () => {
         let current = 'home';
         sections.forEach(id => {
@@ -264,3 +264,4 @@
   }); // DOMContentLoaded
 
 })();
+

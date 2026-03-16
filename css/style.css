@@ -1449,3 +1449,1195 @@ footer {
   .skills-page-grid { grid-template-columns: 1fr; gap: 3rem; }
   .prof-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
 }
+
+/* ============================================================
+   ADDITIONS & OVERRIDES — paste at the END of style.css
+   ============================================================ */
+
+/* ── 1. FAVICON — handled in HTML <head> only (no CSS needed) ─ */
+
+/* ── 2. NEW PAGE TRANSITION — Liquid Curtain ────────────────── */
+/* Replace old panel system with a single morphing overlay */
+
+#transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Hide old t-panels */
+.t-panel { display: none !important; }
+
+/* New: single liquid blob that sweeps across */
+#transition-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ink2);
+  clip-path: circle(0% at 50% 50%);
+  transition: none;
+}
+
+#transition-overlay.leaving::before {
+  animation: liquidIn 0.55s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  pointer-events: all;
+}
+
+#transition-overlay.entering::before {
+  animation: liquidOut 0.6s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+@keyframes liquidIn {
+  0%   { clip-path: circle(0% at 50% 50%); }
+  100% { clip-path: circle(150% at 50% 50%); }
+}
+
+@keyframes liquidOut {
+  0%   { clip-path: circle(150% at 50% 50%); }
+  100% { clip-path: circle(0% at 50% 50%); }
+}
+
+/* Logo pulse during transition */
+#transition-overlay::after {
+  content: 'Niragi.';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Clash Display', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6366f1 0%, #818cf8 50%, #22c55e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  letter-spacing: -0.04em;
+}
+
+#transition-overlay.leaving::after {
+  animation: logoFade 0.55s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+@keyframes logoFade {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.85); }
+  50%  { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* ── 3. PROJECT CARDS — proper side padding ─────────────────── */
+.proj-scroll-wrapper {
+  position: relative;
+  width: calc(100% + 5rem); /* extend beyond container */
+  left: -2.5rem;
+}
+
+/* Add padding on both sides so first/last card has breathing room */
+.proj-grid {
+  padding: 0.75rem 2.5rem 1.25rem !important;
+  gap: 1.5rem;
+}
+
+.proj-card {
+  flex: 0 0 340px; /* fixed comfortable width */
+  min-width: 300px;
+  max-width: 380px;
+}
+
+/* Fade edges on both sides */
+.proj-scroll-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 60px;
+  background: linear-gradient(to right, var(--ink2), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.proj-scroll-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; right: 0;
+  width: 60px;
+  background: linear-gradient(to left, var(--ink2), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Index page projects section has ink background */
+#projects .proj-scroll-wrapper::before {
+  background: linear-gradient(to right, var(--ink), transparent);
+}
+#projects .proj-scroll-wrapper::after {
+  background: linear-gradient(to left, var(--ink), transparent);
+}
+
+/* ── 4. HOMEPAGE ENHANCEMENTS ───────────────────────────────── */
+
+/* ── Scrolling marquee ticker strip ── */
+.marquee-strip {
+  overflow: hidden;
+  background: rgba(99, 102, 241, 0.06);
+  border-top: 1px solid rgba(99, 102, 241, 0.12);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.12);
+  padding: 0.9rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.marquee-track:hover { animation-play-state: paused; }
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0 2.5rem;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--t3);
+  white-space: nowrap;
+  transition: color 0.25s;
+}
+
+.marquee-item:hover { color: var(--a1); }
+
+.marquee-dot {
+  width: 4px; height: 4px;
+  background: var(--a1);
+  border-radius: 50%;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+@keyframes marqueeScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Featured Project Spotlight ── */
+.featured-spotlight {
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--ink2);
+}
+
+.featured-spotlight::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(99,102,241,0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.spotlight-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  gap: 2rem;
+}
+
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.spotlight-main {
+  background: var(--glass);
+  border: 1px solid var(--rim);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s var(--ease);
+  position: relative;
+}
+
+.spotlight-main:hover {
+  border-color: rgba(99,102,241,0.35);
+  transform: translateY(-6px);
+  box-shadow: 0 32px 64px rgba(0,0,0,0.4);
+}
+
+.spotlight-thumb {
+  height: 280px;
+  background: linear-gradient(135deg, rgba(99,102,241,0.4), rgba(129,140,248,0.25), rgba(34,197,94,0.15));
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spotlight-thumb-label {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  background: rgba(15,23,42,0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(99,102,241,0.3);
+  border-radius: 100px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--a3);
+}
+
+.spotlight-thumb-icon {
+  font-size: 4rem;
+  opacity: 0.2;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.spotlight-body {
+  padding: 2rem;
+}
+
+.spotlight-body h3 {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.spotlight-body p {
+  color: var(--t2);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.spotlight-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.spotlight-mini {
+  background: var(--glass);
+  border: 1px solid var(--rim);
+  border-radius: 20px;
+  padding: 1.5rem;
+  transition: all 0.35s var(--ease);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.spotlight-mini:hover {
+  border-color: rgba(99,102,241,0.3);
+  transform: translateX(4px);
+}
+
+.spotlight-mini-icon {
+  width: 40px; height: 40px;
+  border-radius: 11px;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.18);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; color: var(--a1);
+}
+
+.spotlight-mini h4 {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.spotlight-mini p {
+  font-size: 0.8rem;
+  color: var(--t2);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── What I Do / Services Grid ── */
+.services-section {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, var(--ink) 0%, var(--ink2) 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  background: var(--glass);
+  border: 1px solid var(--rim);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--ease);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--grad);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease);
+}
+
+.service-card:hover {
+  border-color: rgba(99,102,241,0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.3);
+}
+
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-number {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.15;
+  position: absolute;
+  top: 1.5rem; right: 1.5rem;
+  transition: opacity 0.3s;
+}
+
+.service-card:hover .service-number { opacity: 0.3; }
+
+.service-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem; color: var(--a1);
+  margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.service-card p {
+  color: var(--t2);
+  font-size: 0.87rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.service-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  background: rgba(34,197,94,0.08);
+  border: 1px solid rgba(34,197,94,0.18);
+  color: var(--a4);
+}
+
+/* ── Process Steps ── */
+.process-section {
+  padding: 5rem 0;
+  background: var(--ink2);
+  position: relative;
+  z-index: 1;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+  margin-top: 3rem;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 34px; left: 12%; right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--a1), var(--a3), var(--a2), transparent);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.process-step {
+  text-align: center;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.process-step-num {
+  width: 68px; height: 68px;
+  border-radius: 50%;
+  background: var(--ink2);
+  border: 2px solid var(--rim);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.25rem;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  position: relative;
+  transition: all 0.35s var(--ease);
+}
+
+.process-step:hover .process-step-num {
+  border-color: var(--a1);
+  box-shadow: 0 0 0 6px rgba(99,102,241,0.1);
+  background: rgba(99,102,241,0.08);
+}
+
+.process-step-num span {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.process-step h4 {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.process-step p {
+  font-size: 0.8rem;
+  color: var(--t2);
+  line-height: 1.7;
+}
+
+/* ── Hero enhancement: floating badges ── */
+.hero-floating-badge {
+  position: absolute;
+  background: rgba(15,23,42,0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--rim2);
+  border-radius: 14px;
+  padding: 0.75rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--t1);
+  font-family: 'Clash Display', sans-serif;
+  z-index: 3;
+  animation: floatBadge 4s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+.hero-floating-badge.badge-tl {
+  top: 60px; left: -30px;
+  animation-delay: -1s;
+}
+
+.hero-floating-badge.badge-br {
+  bottom: 80px; right: -20px;
+  animation-delay: -2.5s;
+}
+
+.hero-floating-badge i {
+  color: var(--a2);
+  font-size: 0.85rem;
+}
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ── Stats cells on homepage — give them icons ── */
+.stats-bar .stat-cell {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* ── Availability banner ── */
+.availability-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(34,197,94,0.06);
+  border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 100px;
+  padding: 0.45rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--a4);
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.04em;
+}
+
+.availability-banner-dot {
+  width: 7px; height: 7px;
+  background: var(--a2);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(34,197,94,0.8);
+  animation: pulse2 2s infinite;
+  flex-shrink: 0;
+}
+
+/* ── Hero role static display (no typewriter needed) ── */
+.hero-role .role-static {
+  color: var(--a2);
+  font-weight: 600;
+  font-family: 'Clash Display', sans-serif;
+}
+
+/* ── Responsive additions ── */
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .process-steps::before { display: none; }
+  .spotlight-grid { grid-template-columns: 1fr; }
+  .spotlight-main .spotlight-thumb { height: 200px; }
+  .proj-card { flex: 0 0 280px; min-width: 260px; }
+  .hero-floating-badge { display: none; }
+}
+
+@media (max-width: 768px) {
+  .process-steps { grid-template-columns: 1fr; }
+  .marquee-strip { display: none; } /* hide on small screens */
+  .proj-scroll-wrapper {
+    width: calc(100% + 2.5rem);
+    left: -1.25rem;
+  }
+  .proj-grid { padding: 0.75rem 1.25rem 1.25rem !important; }
+}
+
+/* ============================================================
+   ADDITIONS & OVERRIDES — paste at the END of style.css
+   ============================================================ */
+
+/* ── 1. FAVICON — handled in HTML <head> only (no CSS needed) ─ */
+
+/* ── 2. NEW PAGE TRANSITION — Liquid Curtain ────────────────── */
+/* Replace old panel system with a single morphing overlay */
+
+#transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Hide old t-panels */
+.t-panel { display: none !important; }
+
+/* New: single liquid blob that sweeps across */
+#transition-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ink2);
+  clip-path: circle(0% at 50% 50%);
+  transition: none;
+}
+
+#transition-overlay.leaving::before {
+  animation: liquidIn 0.55s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  pointer-events: all;
+}
+
+#transition-overlay.entering::before {
+  animation: liquidOut 0.6s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+@keyframes liquidIn {
+  0%   { clip-path: circle(0% at 50% 50%); }
+  100% { clip-path: circle(150% at 50% 50%); }
+}
+
+@keyframes liquidOut {
+  0%   { clip-path: circle(150% at 50% 50%); }
+  100% { clip-path: circle(0% at 50% 50%); }
+}
+
+/* Logo pulse during transition */
+#transition-overlay::after {
+  content: 'Niragi.';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Clash Display', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6366f1 0%, #818cf8 50%, #22c55e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  letter-spacing: -0.04em;
+}
+
+#transition-overlay.leaving::after {
+  animation: logoFade 0.55s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+@keyframes logoFade {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.85); }
+  50%  { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* ── FULL-WIDTH PROJECT GRID (replaces horizontal scroll) ───── */
+.proj-full-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Override any leftover scroll styles on proj-card */
+.proj-full-grid .proj-card {
+  flex: none;
+  min-width: unset;
+  max-width: unset;
+  width: 100%;
+}
+
+.proj-full-grid .proj-thumb {
+  height: 200px;
+}
+
+@media (max-width: 1024px) {
+  .proj-full-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .proj-full-grid { grid-template-columns: 1fr; }
+}
+
+/* ── 4. HOMEPAGE ENHANCEMENTS ───────────────────────────────── */
+
+/* ── Scrolling marquee ticker strip ── */
+.marquee-strip {
+  overflow: hidden;
+  background: rgba(99, 102, 241, 0.06);
+  border-top: 1px solid rgba(99, 102, 241, 0.12);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.12);
+  padding: 0.9rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.marquee-track:hover { animation-play-state: paused; }
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0 2.5rem;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--t3);
+  white-space: nowrap;
+  transition: color 0.25s;
+}
+
+.marquee-item:hover { color: var(--a1); }
+
+.marquee-dot {
+  width: 4px; height: 4px;
+  background: var(--a1);
+  border-radius: 50%;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+@keyframes marqueeScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Featured Project Spotlight ── */
+.featured-spotlight {
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--ink2);
+}
+
+.featured-spotlight::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(99,102,241,0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.spotlight-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  gap: 2rem;
+}
+
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.spotlight-main {
+  background: var(--glass);
+  border: 1px solid var(--rim);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s var(--ease);
+  position: relative;
+}
+
+.spotlight-main:hover {
+  border-color: rgba(99,102,241,0.35);
+  transform: translateY(-6px);
+  box-shadow: 0 32px 64px rgba(0,0,0,0.4);
+}
+
+.spotlight-thumb {
+  height: 280px;
+  background: linear-gradient(135deg, rgba(99,102,241,0.4), rgba(129,140,248,0.25), rgba(34,197,94,0.15));
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spotlight-thumb-label {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  background: rgba(15,23,42,0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(99,102,241,0.3);
+  border-radius: 100px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--a3);
+}
+
+.spotlight-thumb-icon {
+  font-size: 4rem;
+  opacity: 0.2;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.spotlight-body {
+  padding: 2rem;
+}
+
+.spotlight-body h3 {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.spotlight-body p {
+  color: var(--t2);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.spotlight-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.spotlight-mini {
+  background: var(--glass);
+  border: 1px solid var(--rim);
+  border-radius: 20px;
+  padding: 1.5rem;
+  transition: all 0.35s var(--ease);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.spotlight-mini:hover {
+  border-color: rgba(99,102,241,0.3);
+  transform: translateX(4px);
+}
+
+.spotlight-mini-icon {
+  width: 40px; height: 40px;
+  border-radius: 11px;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.18);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; color: var(--a1);
+}
+
+.spotlight-mini h4 {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.spotlight-mini p {
+  font-size: 0.8rem;
+  color: var(--t2);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── What I Do / Services Grid ── */
+.services-section {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, var(--ink) 0%, var(--ink2) 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  background: var(--glass);
+  border: 1px solid var(--rim);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--ease);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--grad);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease);
+}
+
+.service-card:hover {
+  border-color: rgba(99,102,241,0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.3);
+}
+
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-number {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.15;
+  position: absolute;
+  top: 1.5rem; right: 1.5rem;
+  transition: opacity 0.3s;
+}
+
+.service-card:hover .service-number { opacity: 0.3; }
+
+.service-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem; color: var(--a1);
+  margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.service-card p {
+  color: var(--t2);
+  font-size: 0.87rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.service-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  background: rgba(34,197,94,0.08);
+  border: 1px solid rgba(34,197,94,0.18);
+  color: var(--a4);
+}
+
+/* ── Process Steps ── */
+.process-section {
+  padding: 5rem 0;
+  background: var(--ink2);
+  position: relative;
+  z-index: 1;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+  margin-top: 3rem;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 34px; left: 12%; right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--a1), var(--a3), var(--a2), transparent);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.process-step {
+  text-align: center;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.process-step-num {
+  width: 68px; height: 68px;
+  border-radius: 50%;
+  background: var(--ink2);
+  border: 2px solid var(--rim);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.25rem;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  position: relative;
+  transition: all 0.35s var(--ease);
+}
+
+.process-step:hover .process-step-num {
+  border-color: var(--a1);
+  box-shadow: 0 0 0 6px rgba(99,102,241,0.1);
+  background: rgba(99,102,241,0.08);
+}
+
+.process-step-num span {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.process-step h4 {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.process-step p {
+  font-size: 0.8rem;
+  color: var(--t2);
+  line-height: 1.7;
+}
+
+/* ── Hero enhancement: floating badges ── */
+.hero-floating-badge {
+  position: absolute;
+  background: rgba(15,23,42,0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--rim2);
+  border-radius: 14px;
+  padding: 0.75rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--t1);
+  font-family: 'Clash Display', sans-serif;
+  z-index: 3;
+  animation: floatBadge 4s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+.hero-floating-badge.badge-tl {
+  top: 60px; left: -30px;
+  animation-delay: -1s;
+}
+
+.hero-floating-badge.badge-br {
+  bottom: 80px; right: -20px;
+  animation-delay: -2.5s;
+}
+
+.hero-floating-badge i {
+  color: var(--a2);
+  font-size: 0.85rem;
+}
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ── Stats cells on homepage — give them icons ── */
+.stats-bar .stat-cell {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* ── Availability banner ── */
+.availability-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(34,197,94,0.06);
+  border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 100px;
+  padding: 0.45rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--a4);
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.04em;
+}
+
+.availability-banner-dot {
+  width: 7px; height: 7px;
+  background: var(--a2);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(34,197,94,0.8);
+  animation: pulse2 2s infinite;
+  flex-shrink: 0;
+}
+
+/* ── Hero role static display (no typewriter needed) ── */
+.hero-role .role-static {
+  color: var(--a2);
+  font-weight: 600;
+  font-family: 'Clash Display', sans-serif;
+}
+
+/* ── Responsive additions ── */
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .process-steps::before { display: none; }
+  .spotlight-grid { grid-template-columns: 1fr; }
+  .spotlight-main .spotlight-thumb { height: 200px; }
+  .hero-floating-badge { display: none; }
+}
+
+@media (max-width: 768px) {
+  .process-steps { grid-template-columns: 1fr; }
+  .marquee-strip { display: none; }
+}
+
+/* ── FULL-WIDTH PROJECT GRID ────────────────────────────────── */
+.proj-full-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.proj-full-grid .proj-card {
+  flex: none;
+  min-width: unset;
+  max-width: unset;
+  width: 100%;
+  scroll-snap-align: unset;
+}
+
+.proj-full-grid .proj-thumb {
+  height: 190px;
+}
+
+@media (max-width: 1024px) {
+  .proj-full-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .proj-full-grid {
+    grid-template-columns: 1fr;
+  }
+}
