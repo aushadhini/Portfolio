@@ -4,37 +4,208 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Niragi — Education &amp; Skills</title>
-  <link rel="icon" type="image/png" href="../assets/profile/favicon.png">
+  <link rel="icon" type="image/png" href="../assets/profile/favicon1.png">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-  <style>
-    /* ── ELEGANT SKILLS PAGE ENHANCEMENTS ───────────────────── */
+</head>
+<body>
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<div id="transition-overlay"><div class="t-panel"></div><div class="t-panel"></div><div class="t-panel"></div></div>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo"><span>Niragi.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html" class="active">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme"><i class="fas fa-sun"></i></button>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
 
-    /* Proficiency meter — circular badges */
-    .prof-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: 1rem;
-      margin-bottom: 3rem;
-    }
-    .prof-item {
-      background: var(--glass);
-      border: 1px solid var(--rim);
-      border-radius: var(--radius);
-      padding: 1.4rem 1rem;
-      text-align: center;
-      transition: all 0.35s var(--ease);
-      position: relative;
-      overflow: hidden;
-    }
-    .prof-item::before {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--grad);
-      transform: scaleX(0);
+<div class="page-header">
+  <div class="orb orb-1"></div><div class="orb orb-2"></div>
+  <div class="container page-header-inner">
+    <div class="s-tag">Expertise</div>
+    <h1 class="grad-text">Education &amp; Skills</h1>
+    <p>My learning journey, technical proficiencies, and the tools I use daily.</p>
+  </div>
+</div>
+
+<div class="stats-bar reveal">
+  <div class="container">
+    <div class="stats-cells">
+      <div class="stat-cell">
+        <div class="stat-icon"><i class="fas fa-clock"></i></div>
+        <div class="stat-text"><div class="stat-n">2+</div><div class="stat-l">Years Experience</div></div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+        <div class="stat-text"><div class="stat-n">10+</div><div class="stat-l">Projects Completed</div></div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-icon"><i class="fas fa-users"></i></div>
+        <div class="stat-text"><div class="stat-n">3</div><div class="stat-l">Events Organised</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="stripe-divider"></div>
+
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:3rem">
+      <div class="s-tag">Overview</div>
+      <h2 class="s-title" style="margin-bottom:0.5rem">Education &amp; Proficiency</h2>
+      <p class="s-subtitle">My academic background and core technical skill levels at a glance.</p>
+    </div>
+    <div class="edu-skills-grid">
+      <div class="edu-card reveal reveal-left">
+        <div class="edu-card-header">
+          <div class="edu-card-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="edu-card-title">Education</div>
+        </div>
+        <div class="timeline" style="position:relative;z-index:1">
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">BSc (Hons) Computer Science with Data Science</div><div class="tl-meta">Coventry University</div><div class="tl-desc">Second-year undergraduate focusing on frontend development, UI/UX, and SE principles.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Higher National Diploma in Software Engineering</div><div class="tl-meta">NIBM</div><div class="tl-desc">Full-stack development, database management, and software architecture.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Diploma in Software Engineering</div><div class="tl-meta">NIBM</div><div class="tl-desc">Foundation in OOP, programming fundamentals, and basic web development.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Diploma in English</div><div class="tl-meta">University of Sri Jayewardenepura</div><div class="tl-desc">Advanced language proficiency for professional and academic communication.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">G.C.E. Advanced Level &amp; Ordinary Level</div><div class="tl-meta">Dhammissara National College</div></div>
+        </div>
+      </div>
+      <div class="skills-card reveal reveal-right">
+        <div class="edu-card-header">
+          <div class="edu-card-icon"><i class="fas fa-chart-bar"></i></div>
+          <div class="edu-card-title">Core Proficiency</div>
+        </div>
+        <div style="position:relative;z-index:1">
+          <div class="skill-bars" id="skillBars">
+            <div class="bar-item"><div class="bar-header"><span class="bar-name">HTML5 / CSS3</span><span class="bar-pct">92%</span></div><div class="bar-track"><div class="bar-fill" data-pct="92"></div></div></div>
+            <div class="bar-item"><div class="bar-header"><span class="bar-name">Tailwind CSS</span><span class="bar-pct">85%</span></div><div class="bar-track"><div class="bar-fill" data-pct="85"></div></div></div>
+            <div class="bar-item"><div class="bar-header"><span class="bar-name">JavaScript</span><span class="bar-pct">80%</span></div><div class="bar-track"><div class="bar-fill" data-pct="80"></div></div></div>
+            <div class="bar-item"><div class="bar-header"><span class="bar-name">React</span><span class="bar-pct">75%</span></div><div class="bar-track"><div class="bar-fill" data-pct="75"></div></div></div>
+            <div class="bar-item"><div class="bar-header"><span class="bar-name">Figma / UI Design</span><span class="bar-pct">85%</span></div><div class="bar-track"><div class="bar-fill" data-pct="85"></div></div></div>
+            <div class="bar-item"><div class="bar-header"><span class="bar-name">Java / Spring Boot</span><span class="bar-pct">68%</span></div><div class="bar-track"><div class="bar-fill" data-pct="68"></div></div></div>
+            <div class="bar-item"><div class="bar-header"><span class="bar-name">Python / ML</span><span class="bar-pct">65%</span></div><div class="bar-track"><div class="bar-fill" data-pct="65"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe-divider"></div>
+
+<section class="section" style="background:var(--ink2)">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:3rem">
+      <div class="s-tag">Stack</div>
+      <h2 class="s-title" style="margin-bottom:0.5rem">Technologies &amp; Tools</h2>
+      <p class="s-subtitle">The full breadth of my technical toolkit, organised by domain.</p>
+    </div>
+    <div class="prof-grid reveal-stagger" id="profBars">
+      <div class="prof-item"><div class="prof-icon"><i class="fab fa-html5"></i></div><div class="prof-name">HTML5</div><div class="prof-bar-wrap"><div class="prof-bar-fill" data-pct="92"></div></div><div class="prof-pct">92%</div></div>
+      <div class="prof-item"><div class="prof-icon"><i class="fab fa-css3-alt"></i></div><div class="prof-name">CSS3</div><div class="prof-bar-wrap"><div class="prof-bar-fill" data-pct="90"></div></div><div class="prof-pct">90%</div></div>
+      <div class="prof-item"><div class="prof-icon"><i class="fab fa-js"></i></div><div class="prof-name">JavaScript</div><div class="prof-bar-wrap"><div class="prof-bar-fill" data-pct="80"></div></div><div class="prof-pct">80%</div></div>
+      <div class="prof-item"><div class="prof-icon"><i class="fab fa-react"></i></div><div class="prof-name">React</div><div class="prof-bar-wrap"><div class="prof-bar-fill" data-pct="75"></div></div><div class="prof-pct">75%</div></div>
+      <div class="prof-item"><div class="prof-icon"><i class="fab fa-figma"></i></div><div class="prof-name">Figma</div><div class="prof-bar-wrap"><div class="prof-bar-fill" data-pct="85"></div></div><div class="prof-pct">85%</div></div>
+      <div class="prof-item"><div class="prof-icon"><i class="fab fa-java"></i></div><div class="prof-name">Java</div><div class="prof-bar-wrap"><div class="prof-bar-fill" data-pct="68"></div></div><div class="prof-pct">68%</div></div>
+      <div class="prof-item"><div class="prof-icon"><i class="fab fa-python"></i></div><div class="prof-name">Python</div><div class="prof-bar-wrap"><div class="prof-bar-fill" data-pct="65"></div></div><div class="prof-pct">65%</div></div>
+      <div class="prof-item"><div class="prof-icon"><i class="fab fa-php"></i></div><div class="prof-name">PHP</div><div class="prof-bar-wrap"><div class="prof-bar-fill" data-pct="60"></div></div><div class="prof-pct">60%</div></div>
+      <div class="prof-item"><div class="prof-icon"><i class="fab fa-git-alt"></i></div><div class="prof-name">Git</div><div class="prof-bar-wrap"><div class="prof-bar-fill" data-pct="78"></div></div><div class="prof-pct">78%</div></div>
+      <div class="prof-item"><div class="prof-icon"><i class="fab fa-android"></i></div><div class="prof-name">Android</div><div class="prof-bar-wrap"><div class="prof-bar-fill" data-pct="62"></div></div><div class="prof-pct">62%</div></div>
+    </div>
+    <div class="skills-page-grid reveal">
+      <div>
+        <div class="skill-section">
+          <div class="skill-section-header"><div class="skill-section-icon"><i class="fas fa-desktop"></i></div><span class="skill-section-title">Frontend Development</span><span class="skill-section-count">8 skills</span></div>
+          <div class="chip-row">
+            <span class="chip-enhanced"><i class="fab fa-html5"></i> HTML5</span><span class="chip-enhanced"><i class="fab fa-css3-alt"></i> CSS3</span><span class="chip-enhanced"><i class="fab fa-js"></i> JavaScript</span><span class="chip-enhanced"><i class="fab fa-react"></i> React</span><span class="chip-enhanced"><i class="fas fa-wind"></i> Tailwind</span><span class="chip-enhanced"><i class="fab fa-bootstrap"></i> Bootstrap</span><span class="chip-enhanced"><i class="fas fa-mobile-alt"></i> Flutter</span><span class="chip-enhanced"><i class="fas fa-expand-arrows-alt"></i> Responsive</span>
+          </div>
+        </div>
+        <div class="skill-section">
+          <div class="skill-section-header"><div class="skill-section-icon"><i class="fas fa-pen-ruler"></i></div><span class="skill-section-title">UI / UX Design</span><span class="skill-section-count">6 skills</span></div>
+          <div class="chip-row">
+            <span class="chip-enhanced"><i class="fab fa-figma"></i> Figma</span><span class="chip-enhanced"><i class="fas fa-pencil-ruler"></i> Wireframing</span><span class="chip-enhanced"><i class="fas fa-layer-group"></i> Prototyping</span><span class="chip-enhanced"><i class="fas fa-users"></i> User Research</span><span class="chip-enhanced"><i class="fas fa-sitemap"></i> IA</span><span class="chip-enhanced"><i class="fas fa-vial"></i> Usability Testing</span>
+          </div>
+        </div>
+        <div class="skill-section">
+          <div class="skill-section-header"><div class="skill-section-icon"><i class="fas fa-server"></i></div><span class="skill-section-title">Backend &amp; Databases</span><span class="skill-section-count">8 skills</span></div>
+          <div class="chip-row">
+            <span class="chip-enhanced"><i class="fab fa-php"></i> PHP</span><span class="chip-enhanced"><i class="fab fa-java"></i> Java</span><span class="chip-enhanced"><i class="fab fa-python"></i> Python</span><span class="chip-enhanced"><i class="fas fa-leaf"></i> Spring Boot</span><span class="chip-enhanced"><i class="fas fa-database"></i> MySQL</span><span class="chip-enhanced"><i class="fas fa-database"></i> SQLite</span><span class="chip-enhanced"><i class="fas fa-database"></i> Oracle</span><span class="chip-enhanced"><i class="fas fa-fire"></i> Firebase</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="skill-section">
+          <div class="skill-section-header"><div class="skill-section-icon"><i class="fas fa-tools"></i></div><span class="skill-section-title">Tools &amp; Platforms</span><span class="skill-section-count">6 skills</span></div>
+          <div class="chip-row">
+            <span class="chip-enhanced"><i class="fab fa-git-alt"></i> Git</span><span class="chip-enhanced"><i class="fab fa-github"></i> GitHub</span><span class="chip-enhanced"><i class="fas fa-code"></i> VS Code</span><span class="chip-enhanced"><i class="fas fa-paper-plane"></i> Postman</span><span class="chip-enhanced"><i class="fab fa-android"></i> Android Studio</span><span class="chip-enhanced"><i class="fas fa-microchip"></i> Arduino</span>
+          </div>
+        </div>
+        <div class="skill-section">
+          <div class="skill-section-header"><div class="skill-section-icon"><i class="fas fa-brain"></i></div><span class="skill-section-title">Soft Skills</span><span class="skill-section-count">5 skills</span></div>
+          <div class="chip-row">
+            <span class="chip-enhanced"><i class="fas fa-handshake"></i> Teamwork</span><span class="chip-enhanced"><i class="fas fa-clock"></i> Time Management</span><span class="chip-enhanced"><i class="fas fa-lightbulb"></i> Creativity</span><span class="chip-enhanced"><i class="fas fa-chess"></i> Critical Thinking</span><span class="chip-enhanced"><i class="fas fa-sync-alt"></i> Adaptability</span>
+          </div>
+        </div>
+        <div class="cv-banner reveal" style="margin-top:2rem">
+          <div><h3>Want to collaborate?</h3><p>Download my CV for a full overview of my skills and experience.</p></div>
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;flex-shrink:0"><button class="btn btn-glow cv-download-btn"><i class="fas fa-download"></i> Download CV</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe-divider"></div>
+
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:2.5rem">
+      <div class="s-tag">Journey</div>
+      <h2 class="s-title" style="margin-bottom:0.5rem">Experience &amp; Activities</h2>
+      <p class="s-subtitle">Key milestones, roles, and achievements along my learning path.</p>
+    </div>
+    <div class="exp-card reveal"><div class="exp-card-top"><div class="exp-card-title">IEEE Student Member</div><span class="exp-card-badge current">Active</span></div><div class="exp-card-meta"><i class="fas fa-network-wired" style="margin-right:0.4rem"></i>IEEE · 2023 – Present</div><div class="exp-card-desc">Active member involved in NIBMCodeX 1.0 and IEEEXtreme 19.0 as part of the delegate handling team — coordinating registration, participant management, and event logistics.</div></div>
+    <div class="exp-card reveal"><div class="exp-card-top"><div class="exp-card-title">Event Organising Roles</div><span class="exp-card-badge">3 Events</span></div><div class="exp-card-meta"><i class="fas fa-calendar-alt" style="margin-right:0.4rem"></i>NIBM · 2022 – Present</div><div class="exp-card-desc">Organised 3+ technical events and workshops at university level, coordinating cross-functional teams, managing logistics, and ensuring smooth execution from planning through delivery.</div></div>
+    <div class="exp-card reveal"><div class="exp-card-top"><div class="exp-card-title">Frontend Projects Lead</div><span class="exp-card-badge">10+ Projects</span></div><div class="exp-card-meta"><i class="fas fa-laptop-code" style="margin-right:0.4rem"></i>Personal &amp; Academic · 2021 – Present</div><div class="exp-card-desc">Independently designed and developed 10+ projects spanning full-stack web applications, mobile apps for Android, IoT systems with Arduino, and comprehensive UI/UX design systems in Figma.</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-main"><div class="container"><div class="foot-grid">
+    <div class="foot-brand"><div class="foot-brand-logo"><span>Niragi.</span></div><p class="foot-brand-desc">Frontend Developer & UI/UX Designer from Sri Lanka.</p><div class="foot-socials"><a href="https://github.com/aushadhini" target="_blank" class="foot-soc"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/niragi-kodagoda-8b40b3288/" target="_blank" class="foot-soc"><i class="fab fa-linkedin-in"></i></a><a href="/cdn-cgi/l/email-protection#2a4443584b4d434b5f59424b4e424344436a4d474b434604494547" class="foot-soc"><i class="fas fa-envelope"></i></a></div></div>
+    <div class="foot-col"><h4>Navigation</h4><ul><li><a href="../index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="skills.html">Skills</a></li><li><a href="projects.html">Projects</a></li><li><a href="certifications.html">Certifications</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="foot-col"></div>
+    <div class="foot-contact"><h4 style="font-family:var(--ff-head);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--t3);margin-bottom:1.2rem;">Get in Touch</h4><div class="foot-contact-item"><div class="foot-contact-icon"><i class="fas fa-envelope"></i></div><div><div class="foot-contact-label">Email</div><div class="foot-contact-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e48a8d9685838d8591978c85808c8d8a8da48389858d88ca878b89">[email&#160;protected]</a></div></div></div></div>
+  </div></div></div>
+  <div class="foot-bottom"><div class="foot-bottom-inner"><p class="foot-copy">&copy; 2026 Niragi Kodagoda · IEEE Student Member</p><div class="foot-status"><span class="foot-status-dot"></span>Available for freelance &amp; full-time roles</div></div></div>
+</footer>
+
+<button id="btt" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/main.js"></script>
+<script>
+  const profObs = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.reveal').forEach((revealEl, i) => {
+          setTimeout(() => {
+            revealEl.classList.add('active');
+          }, i * 100);
+        });
+      }
+    });
+  });      transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.4s var(--ease);
     }
