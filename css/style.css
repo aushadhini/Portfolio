@@ -1588,3 +1588,354 @@ body.dark .f-input:focus {
   border-color: rgba(6,182,212,0.45) !important;
   box-shadow: 0 0 0 4px rgba(6,182,212,0.08) !important;
 }
+
+/* ============================================================
+   NIRAGI — Theme Mix: T1 + T2 (Luxurious × Bold)
+   Dark:  Midnight-charcoal bg · Electric cyan + Vivid violet
+   Light: Pearl-white to violet-tint bg · Deep teal + Indigo
+   Gradient: Cyan → Violet on all accent elements
+   Drop this AFTER style.css — overrides tokens only.
+   ============================================================ */
+
+/* ── LIGHT MODE (default) ───────────────────────────────────── */
+:root {
+  --ink:     #f0fdff;
+  --ink2:    #ffffff;
+  --ink3:    #ede9fe;
+
+  --glass:   rgba(0,0,0,0.03);
+  --glass2:  rgba(0,0,0,0.06);
+  --rim:     rgba(8,145,178,0.12);
+  --rim2:    rgba(109,40,217,0.2);
+
+  --a1: #0891b2;    /* primary: deep teal (T1 light) */
+  --a2: #6d28d9;    /* secondary: indigo (T2 light) */
+  --a3: #06b6d4;    /* teal lighter */
+  --a4: #7c3aed;    /* violet lighter */
+
+  --grad:  linear-gradient(135deg, #0369a1 0%, #0891b2 35%, #6d28d9 100%);
+  --grad2: linear-gradient(135deg, #0369a1, #0891b2);
+  --aurora: linear-gradient(135deg,
+    rgba(8,145,178,0.06) 0%,
+    rgba(6,182,212,0.04) 35%,
+    rgba(109,40,217,0.05) 70%,
+    rgba(124,58,237,0.03) 100%);
+
+  --t1: #111827;   /* primary text: near black */
+  --t2: #374151;   /* secondary text: dark gray */
+  --t3: #6b7280;   /* muted text */
+  --t4: #9ca3af;   /* placeholder */
+}
+
+/* ── DARK MODE ──────────────────────────────────────────────── */
+body.dark {
+  --ink:     #070711;
+  --ink2:    #0d0d18;
+  --ink3:    #121222;
+
+  --glass:   rgba(6,182,212,0.04);
+  --glass2:  rgba(124,58,237,0.07);
+  --rim:     rgba(6,182,212,0.1);
+  --rim2:    rgba(124,58,237,0.2);
+
+  --a1: #06b6d4;    /* primary: electric cyan (T1) */
+  --a2: #8b5cf6;    /* secondary: vivid violet (T2) */
+  --a3: #22d3ee;    /* cyan lighter */
+  --a4: #a78bfa;    /* violet lighter */
+
+  --grad:  linear-gradient(135deg, #0891b2 0%, #06b6d4 35%, #7c3aed 100%);
+  --grad2: linear-gradient(135deg, #0891b2, #06b6d4);
+  --aurora: linear-gradient(135deg,
+    rgba(6,182,212,0.1) 0%,
+    rgba(34,211,238,0.07) 35%,
+    rgba(124,58,237,0.09) 70%,
+    rgba(167,139,250,0.05) 100%);
+
+  --t1: #f8fafc;   /* primary text: near white */
+  --t2: #cbd5e1;   /* secondary text: soft cool gray */
+  --t3: #94a3b8;   /* muted text */
+  --t4: #475569;   /* placeholder */
+}
+
+/* ── NAV ────────────────────────────────────────────────────── */
+nav.scrolled {
+  background: rgba(240,253,255,0.93) !important;
+  box-shadow: 0 1px 14px rgba(8,145,178,0.1) !important;
+}
+body.dark nav.scrolled {
+  background: rgba(7,7,17,0.93) !important;
+  box-shadow: 0 1px 14px rgba(6,182,212,0.1), 0 1px 14px rgba(124,58,237,0.08) !important;
+}
+
+/* ── MOBILE MENU ────────────────────────────────────────────── */
+@media(max-width:768px) {
+  .nav-links { background: rgba(240,253,255,0.97) !important; }
+  body.dark .nav-links { background: rgba(7,7,17,0.97) !important; }
+}
+
+/* ── HERO + PAGE HEADER ─────────────────────────────────────── */
+#home {
+  background: linear-gradient(160deg, #f0fdff 0%, #ffffff 45%, #f5f3ff 100%) !important;
+}
+body.dark #home {
+  background: linear-gradient(160deg, #070711 0%, #0d0d18 55%, #0a0a1a 100%) !important;
+}
+.page-header {
+  background: linear-gradient(160deg, #f0fdff 0%, #ffffff 55%, #f5f3ff 100%) !important;
+}
+body.dark .page-header {
+  background: linear-gradient(160deg, #070711 0%, #0d0d18 65%, #0a0a1a 100%) !important;
+}
+
+/* ── ORBS ───────────────────────────────────────────────────── */
+.orb-1 { background: radial-gradient(circle, rgba(8,145,178,0.14), transparent 70%) !important; }
+.orb-2 { background: radial-gradient(circle, rgba(109,40,217,0.12), transparent 70%) !important; }
+.orb-3 { background: radial-gradient(circle, rgba(6,182,212,0.08), transparent 70%) !important; }
+body.dark .orb-1 { background: radial-gradient(circle, rgba(6,182,212,0.18), transparent 70%) !important; }
+body.dark .orb-2 { background: radial-gradient(circle, rgba(124,58,237,0.16), transparent 70%) !important; }
+body.dark .orb-3 { background: radial-gradient(circle, rgba(34,211,238,0.09), transparent 70%) !important; }
+
+/* ── HERO GRID ──────────────────────────────────────────────── */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(8,145,178,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(109,40,217,0.04) 1px, transparent 1px) !important;
+}
+body.dark .hero-grid {
+  background-image:
+    linear-gradient(rgba(6,182,212,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,58,237,0.05) 1px, transparent 1px) !important;
+}
+
+/* ── PROJECT THUMB GRADIENTS ────────────────────────────────── */
+.proj-thumb-bg-1 { background: linear-gradient(135deg, rgba(8,145,178,0.65), rgba(109,40,217,0.5)) !important; }
+.proj-thumb-bg-2 { background: linear-gradient(135deg, rgba(109,40,217,0.6), rgba(8,145,178,0.45)) !important; }
+.proj-thumb-bg-3 { background: linear-gradient(135deg, rgba(6,182,212,0.55), rgba(124,58,237,0.5)) !important; }
+.proj-thumb-bg-4 { background: linear-gradient(135deg, rgba(8,145,178,0.45), rgba(124,58,237,0.55)) !important; }
+
+/* ── BUTTONS ────────────────────────────────────────────────── */
+.btn-glow {
+  box-shadow: 0 4px 20px rgba(8,145,178,0.28), 0 2px 10px rgba(109,40,217,0.2) !important;
+}
+.btn-glow:hover {
+  box-shadow: 0 8px 32px rgba(8,145,178,0.36), 0 4px 16px rgba(109,40,217,0.28) !important;
+}
+body.dark .btn-glow {
+  box-shadow: 0 4px 22px rgba(6,182,212,0.3), 0 2px 12px rgba(124,58,237,0.28) !important;
+}
+body.dark .btn-glow:hover {
+  box-shadow: 0 8px 34px rgba(6,182,212,0.38), 0 4px 18px rgba(124,58,237,0.34) !important;
+}
+
+/* ── SOCIALS + BTT ──────────────────────────────────────────── */
+.soc:hover {
+  border-color: var(--a1) !important;
+  box-shadow: 0 6px 20px rgba(6,182,212,0.2) !important;
+}
+#btt {
+  box-shadow: 0 6px 22px rgba(8,145,178,0.28), 0 3px 10px rgba(109,40,217,0.2) !important;
+}
+#btt:hover {
+  box-shadow: 0 12px 32px rgba(8,145,178,0.36), 0 6px 16px rgba(109,40,217,0.28) !important;
+}
+body.dark #btt {
+  box-shadow: 0 6px 22px rgba(6,182,212,0.32), 0 3px 10px rgba(124,58,237,0.25) !important;
+}
+
+/* ── CARDS HOVER ────────────────────────────────────────────── */
+.stat-cell:hover {
+  border-color: rgba(8,145,178,0.2) !important;
+  box-shadow: 0 14px 40px rgba(8,145,178,0.1), 0 6px 20px rgba(109,40,217,0.08) !important;
+}
+.proj-card:hover {
+  border-color: rgba(8,145,178,0.2) !important;
+  box-shadow: 0 20px 50px rgba(8,145,178,0.12), 0 8px 24px rgba(109,40,217,0.1) !important;
+}
+body.dark .stat-cell:hover {
+  border-color: rgba(6,182,212,0.18) !important;
+  box-shadow: 0 14px 40px rgba(6,182,212,0.14), 0 6px 20px rgba(124,58,237,0.12) !important;
+}
+body.dark .proj-card:hover {
+  border-color: rgba(6,182,212,0.18) !important;
+  box-shadow: 0 20px 50px rgba(6,182,212,0.14), 0 8px 24px rgba(124,58,237,0.12) !important;
+}
+
+/* ── S-TAG ──────────────────────────────────────────────────── */
+.s-tag {
+  color: var(--a1);
+  background: rgba(8,145,178,0.07);
+  border-color: rgba(8,145,178,0.2);
+}
+.s-tag::before { background: var(--a1); }
+body.dark .s-tag {
+  color: var(--a1);
+  background: rgba(6,182,212,0.07);
+  border-color: rgba(6,182,212,0.2);
+}
+
+/* ── SERVICE TAGS — violet tinted ───────────────────────────── */
+.service-tag {
+  background: rgba(109,40,217,0.07) !important;
+  border-color: rgba(109,40,217,0.18) !important;
+  color: var(--a2) !important;
+}
+body.dark .service-tag {
+  background: rgba(124,58,237,0.08) !important;
+  border-color: rgba(124,58,237,0.2) !important;
+  color: var(--a2) !important;
+}
+
+/* ── CHIPS — alternate cyan / violet ────────────────────────── */
+.proj-pill {
+  background: rgba(8,145,178,0.08) !important;
+  border-color: rgba(8,145,178,0.2) !important;
+  color: var(--a1) !important;
+}
+body.dark .proj-pill {
+  background: rgba(6,182,212,0.08) !important;
+  border-color: rgba(6,182,212,0.18) !important;
+  color: var(--a1) !important;
+}
+
+/* ── SCROLLBAR ──────────────────────────────────────────────── */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--a1), var(--a2)) !important;
+}
+
+/* ── STRIPE DIVIDER ─────────────────────────────────────────── */
+.stripe-divider {
+  background: linear-gradient(90deg, transparent, var(--a1), var(--a2), transparent) !important;
+  opacity: 0.25;
+}
+
+/* ── TRANSITION OVERLAY LOGO ────────────────────────────────── */
+#transition-overlay::after {
+  background: linear-gradient(135deg, #0891b2, #06b6d4, #7c3aed) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+/* ── FOOT STATUS DOT ────────────────────────────────────────── */
+.foot-status-dot {
+  background: var(--a1) !important;
+  box-shadow: 0 0 8px rgba(6,182,212,0.5) !important;
+}
+
+/* ── IMG BADGE ──────────────────────────────────────────────── */
+.img-badge { border-color: rgba(8,145,178,0.22) !important; }
+body.dark .img-badge {
+  border-color: rgba(6,182,212,0.28) !important;
+  background: rgba(7,7,17,0.88) !important;
+  color: #f0f9ff !important;
+}
+
+/* ── DARK MODE INPUTS ───────────────────────────────────────── */
+body.dark .f-input { background: #0d0d18; color: #f0f9ff; border-color: rgba(255,255,255,0.08); }
+body.dark .f-input:focus {
+  border-color: rgba(6,182,212,0.4) !important;
+  box-shadow: 0 0 0 4px rgba(6,182,212,0.07), 0 0 0 6px rgba(124,58,237,0.05) !important;
+}
+
+/* ── DARK MODE FOOTER ───────────────────────────────────────── */
+body.dark footer { background: #070711; }
+body.dark .foot-soc { background: #0d0d18; }
+
+/* ── DARK MODE GLASS CARDS ──────────────────────────────────── */
+body.dark .glass-card,
+body.dark .edu-card,
+body.dark .skills-card,
+body.dark .stat-cell,
+body.dark .cert-card,
+body.dark .proj-card,
+body.dark .service-card,
+body.dark .exp-card,
+body.dark .form-wrap {
+  box-shadow: none;
+}
+
+/* ── TEXT COLOUR OVERRIDES — ensure white/gray in dark mode ─── */
+
+/* Nav links */
+body.dark .nav-links a { color: #cbd5e1 !important; }
+body.dark .nav-links a:hover { color: #f8fafc !important; }
+body.dark .nav-links a.active { color: var(--a1) !important; }
+
+/* Hero text */
+body.dark .hero-name  { color: #f8fafc !important; }
+body.dark .hero-desc  { color: #cbd5e1 !important; }
+body.dark .hero-layout > div:first-child h2 { color: #64748b !important; }
+
+/* Section titles & subtitles */
+body.dark .s-title   { color: #f8fafc !important; }
+body.dark .s-subtitle { color: #94a3b8 !important; }
+
+/* About bio text */
+body.dark .abf-text p  { color: #cbd5e1 !important; }
+body.dark .abf-text strong { color: #f8fafc !important; }
+body.dark .abf-hl-card h4 { color: #f8fafc !important; }
+body.dark .abf-hl-card p  { color: #94a3b8 !important; }
+
+/* Skill bars */
+body.dark .bar-name  { color: #f8fafc !important; }
+body.dark .card-h    { color: #f8fafc !important; }
+body.dark .card-p    { color: #94a3b8 !important; }
+
+/* Edu timeline */
+body.dark .edu-deg   { color: #f8fafc !important; }
+body.dark .tl-title  { color: #f8fafc !important; }
+body.dark .tl-desc   { color: #94a3b8 !important; }
+body.dark .edu-card-title { color: #f8fafc !important; }
+
+/* Project cards */
+body.dark .proj-title { color: #f8fafc !important; }
+body.dark .proj-desc  { color: #94a3b8 !important; }
+body.dark .proj-link  { color: #94a3b8 !important; }
+body.dark .proj-link:hover { color: var(--a1) !important; }
+
+/* Cert cards */
+body.dark .cert-name { color: #f8fafc !important; }
+body.dark .cert-by   { color: #94a3b8 !important; }
+body.dark .cert-date { color: #64748b !important; }
+
+/* Service cards */
+body.dark .service-card h3 { color: #f8fafc !important; }
+body.dark .service-card p  { color: #94a3b8 !important; }
+
+/* Process steps */
+body.dark .process-step h4 { color: #f8fafc !important; }
+body.dark .process-step p  { color: #94a3b8 !important; }
+
+/* Experience cards */
+body.dark .exp-card-title { color: #f8fafc !important; }
+body.dark .exp-card-desc  { color: #94a3b8 !important; }
+
+/* Contact section */
+body.dark .contact-lede { color: #94a3b8 !important; }
+body.dark .c-val        { color: #f8fafc !important; }
+body.dark .c-label      { color: #64748b !important; }
+
+/* Stat cells */
+body.dark .stat-l { color: #64748b !important; }
+
+/* Footer */
+body.dark .foot-brand-desc  { color: #94a3b8 !important; }
+body.dark .foot-col ul li a { color: #94a3b8 !important; }
+body.dark .foot-col ul li a:hover { color: #f8fafc !important; }
+body.dark .foot-contact-val { color: #94a3b8 !important; }
+body.dark .foot-copy        { color: #475569 !important; }
+body.dark .foot-status      { color: #94a3b8 !important; }
+
+/* Page header */
+body.dark .page-header h1 { color: #f8fafc !important; }
+body.dark .page-header p  { color: #94a3b8 !important; }
+
+/* Chips & pills */
+body.dark .chip          { color: #94a3b8 !important; }
+body.dark .chip:hover    { color: var(--a1) !important; }
+body.dark .chip-enhanced { color: #94a3b8 !important; }
+body.dark .chip-enhanced:hover { color: var(--a1) !important; }
+body.dark .abf-chip      { color: #94a3b8 !important; }
+
+/* CV banner */
+body.dark .cv-banner h3 { color: #f8fafc !important; }
+body.dark .cv-banner p  { color: #94a3b8 !important; }
