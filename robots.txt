@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aushadhini.github.io/sitemap.xml
+Sitemap: https://aushadhini.github.io/Portfolio/sitemap.xml
