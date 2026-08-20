@@ -461,6 +461,14 @@
           </div>
         </div>
 
+        <div class="skill-group">
+          <span class="skill-group-label">Other platforms</span>
+          <div class="chips">
+            <span class="chip"><i class="fab fa-android" aria-hidden="true"></i> Android</span>
+            <span class="chip"><i class="fas fa-microchip" aria-hidden="true"></i> Arduino / IoT</span>
+            <span class="chip"><i class="fas fa-brain" aria-hidden="true"></i> Machine Learning</span>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -695,7 +703,7 @@
     <div class="sec-head sec-head--center reveal">
       <span class="eyebrow">Credentials</span>
       <h2 class="sec-title">Licenses &amp; <em>certifications</em></h2>
-      <p class="sec-sub">Verified professional credentials.</p>
+      <p class="sec-sub">Verified credentials and ongoing coursework.</p>
     </div>
 
     <ul class="cert-list reveal">
@@ -724,6 +732,42 @@
           <p class="cert-org">Microsoft</p>
         </div>
         <span class="cert-year">2024</span>
+        <span class="badge badge--issued">Issued</span>
+      </li>
+      <li class="cert">
+        <i class="cert-ico fas fa-pen-ruler" aria-hidden="true"></i>
+        <div class="cert-main">
+          <h3 class="cert-name">UI/UX Design Specialization</h3>
+          <p class="cert-org">Google via Coursera</p>
+        </div>
+        <span class="cert-year">—</span>
+        <span class="badge badge--progress">In progress</span>
+      </li>
+      <li class="cert">
+        <i class="cert-ico fab fa-figma" aria-hidden="true"></i>
+        <div class="cert-main">
+          <h3 class="cert-name">Figma for Beginners</h3>
+          <p class="cert-org">Udemy</p>
+        </div>
+        <span class="cert-year">2023</span>
+        <span class="badge badge--issued">Issued</span>
+      </li>
+      <li class="cert">
+        <i class="cert-ico fab fa-git-alt" aria-hidden="true"></i>
+        <div class="cert-main">
+          <h3 class="cert-name">Git &amp; GitHub Essentials</h3>
+          <p class="cert-org">LinkedIn Learning</p>
+        </div>
+        <span class="cert-year">2023</span>
+        <span class="badge badge--issued">Issued</span>
+      </li>
+      <li class="cert">
+        <i class="cert-ico fab fa-android" aria-hidden="true"></i>
+        <div class="cert-main">
+          <h3 class="cert-name">Android App Development with Java</h3>
+          <p class="cert-org">Udemy</p>
+        </div>
+        <span class="cert-year">2023</span>
         <span class="badge badge--issued">Issued</span>
       </li>
     </ul>

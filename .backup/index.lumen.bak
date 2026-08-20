@@ -20,8 +20,8 @@
 <meta name="twitter:description" content="Software QA Engineer specialising in manual and functional testing, test case design, and defect reporting.">
 <meta name="twitter:image" content="assets/profile/me2.jpeg">
 
-<meta name="theme-color" content="#1a1512" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0f0c0a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#14261f" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0908" media="(prefers-color-scheme: dark)">
 
 <!-- Favicons -->
 <link rel="icon" type="image/png" sizes="32x32" href="assets/profile/favicon1.png">
@@ -29,10 +29,10 @@
 <link rel="shortcut icon" href="assets/profile/favicon1.png">
 <link rel="apple-touch-icon" href="assets/profile/favicon1.png">
 
-<!-- Fonts: Bodoni Moda (large display only) · Inter (UI + body) · JetBrains Mono (code-adjacent) -->
+<!-- Fonts: Plus Jakarta Sans (display) · Inter (body) · JetBrains Mono (code-adjacent) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -49,6 +49,8 @@
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
+
+<div class="canvas">
 
 <!-- ══ NAV ══════════════════════════════════════════════════ -->
 <header class="nav" id="nav">
@@ -85,49 +87,98 @@
 <main id="main">
 
 <!-- ══ HERO ═════════════════════════════════════════════════ -->
-<section class="hero band" id="home">
+<section class="hero" id="home">
   <div class="wrap">
     <div class="hero-grid">
 
+      <!-- statement -->
       <div class="hero-copy">
-        <p class="hero-eyebrow">Software Quality Assurance Engineer</p>
-        <h1>Niragi<br>Kodagoda</h1>
+        <p class="hero-eyebrow">Software Quality Assurance</p>
+        <h1>Niragi Kodagoda</h1>
+        <p class="hero-statement">
+          I make sure software behaves <em>exactly</em> as specified.
+        </p>
         <p class="hero-lede">
-          I make sure software behaves <em>exactly</em> as specified — manual and
-          functional testing, structured test case design, and defect reports a
-          developer can act on the first time.
+          Manual and functional testing, structured test case design, and defect
+          reports a developer can act on first time — informed by real experience
+          building the software I test.
         </p>
         <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">Selected work</a>
-          <a href="assets/cv/NiragiKodagoda_CV.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Résumé</a>
+          <a href="#projects" class="btn btn-primary">
+            View my work <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+          <a href="assets/cv/NiragiKodagoda_CV.pdf" class="btn btn-underline" target="_blank" rel="noopener">
+            Download résumé
+          </a>
         </div>
-        <p class="hero-note">
-          <span class="status-dot" aria-hidden="true"></span>
-          Open to QA roles<span class="hero-note-sep">·</span>Colombo, Sri Lanka
+        <p class="hero-place">
+          <i class="fas fa-location-dot" aria-hidden="true"></i>
+          Colombo, Sri Lanka &nbsp;·&nbsp; Available remote
         </p>
       </div>
 
+      <!-- arch portrait -->
       <div class="hero-media">
-        <span class="portrait-rule" aria-hidden="true"></span>
-        <div class="portrait">
+        <span class="hero-disc" aria-hidden="true"></span>
+        <div class="arch">
           <img src="assets/profile/me2.jpeg" alt="Portrait of Niragi Kodagoda" width="848" height="1132">
+        </div>
+      </div>
+
+      <!-- capability rail -->
+      <div class="hero-rail">
+        <p class="status">
+          <span class="status-dot" aria-hidden="true"></span>
+          Open to QA roles
+        </p>
+        <p class="rail-display" style="margin-top:22px">QA<span>+ Code</span></p>
+        <p class="rail-sub">One engineer, both sides of the handoff.</p>
+        <ul class="rail-list">
+          <li><i class="fas fa-clipboard-check" aria-hidden="true"></i> Manual &amp; Functional Testing</li>
+          <li><i class="fas fa-list-check" aria-hidden="true"></i> Test Case Design</li>
+          <li><i class="fas fa-bug" aria-hidden="true"></i> Defect Tracking &amp; Reporting</li>
+          <li><i class="fas fa-code" aria-hidden="true"></i> Frontend Development</li>
+        </ul>
+        <div class="socials">
+          <span class="socials-label">Connect</span>
+          <a href="https://github.com/aushadhini" class="soc" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/niragi-kodagoda-8b40b3288/" class="soc" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="https://x.com/aushadhini" class="soc" target="_blank" rel="noopener" aria-label="X">
+            <i class="fab fa-x-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:niragiaushadhini@gmail.com" class="soc" aria-label="Email">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
 
     </div>
 
+    <!-- boxed stats -->
+    <div class="statbar reveal-group">
+      <div class="statbox">
+        <span class="statbox-ico"><i class="fas fa-rocket" aria-hidden="true"></i></span>
+        <div><div class="statbox-n">10+</div><div class="statbox-l">Projects delivered</div></div>
+      </div>
+      <div class="statbox">
+        <span class="statbox-ico"><i class="fas fa-layer-group" aria-hidden="true"></i></span>
+        <div><div class="statbox-n">7+</div><div class="statbox-l">Technologies</div></div>
+      </div>
+      <div class="statbox">
+        <span class="statbox-ico"><i class="fas fa-certificate" aria-hidden="true"></i></span>
+        <div><div class="statbox-n">8+</div><div class="statbox-l">Certifications</div></div>
+      </div>
+      <div class="statbox">
+        <span class="statbox-ico"><i class="fas fa-graduation-cap" aria-hidden="true"></i></span>
+        <div><div class="statbox-n">4</div><div class="statbox-l">Qualifications</div></div>
+      </div>
+    </div>
   </div>
 </section>
-
-<!-- ══ STATEMENT ══════════════════════════════════════════ -->
-<div class="statement">
-  <div class="wrap">
-    <p class="statement-text reveal">
-      Software breaks in the gaps between what was specified, what was
-      designed, and what was built. <em>I work in those gaps.</em>
-    </p>
-  </div>
-</div>
 
 <!-- ══ ABOUT ════════════════════════════════════════════════ -->
 <section class="section" id="about">
@@ -147,12 +198,11 @@
             quality assurance practices that keep releases predictable.
           </p>
           <p>
-            Alongside my studies I'm interning at <strong>Arimac Digital</strong> as a Software
-            Engineer &amp; UI/UX Engineer, contributing frontend development and interface design
-            to client products including Sampath Bank, Hutch, Siddhify, and SherlockAI — plus
-            freelance full-stack work. That hands-on build experience is my advantage in QA: I know
-            how software is put together, where it tends to break, and how to write a defect report
-            a developer can actually act on.
+            Before QA, I interned at <strong>Arimac</strong> as a Software Engineer &amp; UI/UX
+            Engineer, contributing frontend development and interface design to client products
+            including Sampath Bank, Hutch, Siddhify, and SherlockAI — alongside freelance
+            full-stack work. That background is my advantage: I know how software is built, where
+            it tends to break, and how to write a defect report a developer can actually act on.
           </p>
           <p>
             I'm detail-oriented and genuinely curious — the kind of person who reads the edge case in
@@ -214,61 +264,82 @@
     </div>
 
     <div class="tracks">
-
       <div class="track reveal">
         <div class="track-head">
           <i class="fas fa-briefcase" aria-hidden="true"></i>
           <h3>Experience</h3>
         </div>
+        <div class="exp-card">
+      <div class="exp-head">
+        <div class="exp-logo" aria-hidden="true">A</div>
+        <div class="exp-headings">
+          <h3 class="exp-role">Intern Software Engineer &amp; UI/UX Engineer</h3>
+          <div class="exp-org">Arimac</div>
+          <!-- TODO: add dates, e.g. <span><i class="fas fa-calendar" aria-hidden="true"></i> Jan 2025 — Jul 2025</span> -->
+          <div class="exp-meta">
+            <span><i class="fas fa-briefcase" aria-hidden="true"></i> Internship</span>
+            <span><i class="fas fa-location-dot" aria-hidden="true"></i> Sri Lanka</span>
+            <span><i class="fas fa-layer-group" aria-hidden="true"></i> 4 client products</span>
+          </div>
+        </div>
+      </div>
 
-        <ol class="entries">
-          <li class="entry entry--current">
-            <p class="entry-when">Mar 2026 — Present &middot; Full-time internship</p>
-            <h4 class="entry-title">Intern Software Engineer &amp; UI/UX</h4>
-            <p class="entry-org">Arimac Digital</p>
-            <p class="entry-desc">
-              Working across two disciplines on live client products — building frontend
-              interfaces and designing the experiences behind them. Sitting on both sides of
-              the design-to-code handoff shows me where intent and implementation drift
-              apart, which is exactly where defects tend to hide.
-            </p>
+      <div class="exp-body">
+        <p>
+          Worked across two disciplines on live client products — building frontend interfaces
+          and designing the experiences behind them. Contributed frontend development to three
+          products and interface design to four, spanning banking, telecommunications, and
+          AI-driven applications.
+        </p>
+        <p>
+          Sitting on both sides of the design-to-code handoff taught me where intent and
+          implementation drift apart — which is exactly where defects tend to hide.
+        </p>
+      </div>
 
-            <ul class="entry-products">
-              <li>
-                <span class="ep-name">Siddhify</span>
-                <span class="ep-discs"><span class="disc disc--fe">Frontend</span><span class="disc disc--ux">UI/UX</span></span>
-              </li>
-              <li>
-                <span class="ep-name">SherlockAI</span>
-                <span class="ep-discs"><span class="disc disc--fe">Frontend</span><span class="disc disc--ux">UI/UX</span></span>
-              </li>
-              <li>
-                <span class="ep-name">Sampath Bank</span>
-                <span class="ep-discs"><span class="disc disc--fe">Frontend</span><span class="disc disc--ux">UI/UX</span></span>
-              </li>
-              <li>
-                <span class="ep-name">Hutch</span>
-                <span class="ep-discs"><span class="disc disc--ux">UI/UX</span></span>
-              </li>
-            </ul>
-          </li>
+      <div class="exp-projects-head">
+        <span class="exp-projects-label">Products I contributed to</span>
+        <div class="exp-legend">
+          <span><i class="dot-fe" aria-hidden="true"></i> Frontend development</span>
+          <span><i class="dot-ux" aria-hidden="true"></i> UI/UX design</span>
+        </div>
+      </div>
 
-          <li class="entry entry--current">
-            <p class="entry-when">Oct 2025 — Present &middot; Membership</p>
-            <h4 class="entry-title">Student Member</h4>
-            <p class="entry-org">IEEE</p>
-          </li>
+      <!-- Optional: add a one-line description per product with
+           <div class="exp-proj-note">…</div> under the product name. -->
+      <div class="exp-projects">
+        <article class="exp-proj">
+          <div class="exp-proj-name">Siddhify</div>
+          <div class="exp-discs">
+            <span class="disc disc--fe"><i class="fas fa-code" aria-hidden="true"></i> Frontend</span>
+            <span class="disc disc--ux"><i class="fas fa-pen-ruler" aria-hidden="true"></i> UI/UX</span>
+          </div>
+        </article>
 
-          <li class="entry">
-            <p class="entry-when">Aug 2025 — Oct 2025 &middot; Volunteer</p>
-            <h4 class="entry-title">Organizing Committee — Delegates Handling Team</h4>
-            <p class="entry-org">NIBMCodeX</p>
-            <p class="entry-desc">
-              Handled delegate coordination for NIBMCodeX 1.0, a 24-hour inter-university
-              coding challenge held in Sri Lanka.
-            </p>
-          </li>
-        </ol>
+        <article class="exp-proj">
+          <div class="exp-proj-name">SherlockAI</div>
+          <div class="exp-discs">
+            <span class="disc disc--fe"><i class="fas fa-code" aria-hidden="true"></i> Frontend</span>
+            <span class="disc disc--ux"><i class="fas fa-pen-ruler" aria-hidden="true"></i> UI/UX</span>
+          </div>
+        </article>
+
+        <article class="exp-proj">
+          <div class="exp-proj-name">Sampath Bank</div>
+          <div class="exp-discs">
+            <span class="disc disc--fe"><i class="fas fa-code" aria-hidden="true"></i> Frontend</span>
+            <span class="disc disc--ux"><i class="fas fa-pen-ruler" aria-hidden="true"></i> UI/UX</span>
+          </div>
+        </article>
+
+        <article class="exp-proj">
+          <div class="exp-proj-name">Hutch</div>
+          <div class="exp-discs">
+            <span class="disc disc--ux"><i class="fas fa-pen-ruler" aria-hidden="true"></i> UI/UX</span>
+          </div>
+        </article>
+        </div>
+        </div>
       </div>
 
       <div class="track reveal">
@@ -276,31 +347,29 @@
           <i class="fas fa-graduation-cap" aria-hidden="true"></i>
           <h3>Education</h3>
         </div>
-
-        <ol class="entries">
-          <li class="entry entry--current">
-            <p class="entry-when">In progress</p>
-            <h4 class="entry-title">BSc (Hons) Computer Science with Applied Artificial Intelligence</h4>
-            <p class="entry-org">Coventry University — via NIBM</p>
+        <ol class="edu">
+          <li class="edu-item">
+            <div class="edu-deg">BSc (Hons) Computer Science with Applied Artificial Intelligence</div>
+            <div class="edu-inst">Coventry University — via NIBM</div>
+            <div class="edu-meta">In progress</div>
           </li>
-          <li class="entry">
-            <p class="entry-when">Completed</p>
-            <h4 class="entry-title">Higher National Diploma in Software Engineering</h4>
-            <p class="entry-org">National Institute of Business Management (NIBM)</p>
+          <li class="edu-item">
+            <div class="edu-deg">Higher National Diploma in Software Engineering</div>
+            <div class="edu-inst">National Institute of Business Management (NIBM)</div>
+            <div class="edu-meta">Completed</div>
           </li>
-          <li class="entry">
-            <p class="entry-when">Completed</p>
-            <h4 class="entry-title">Diploma in Software Engineering</h4>
-            <p class="entry-org">National Institute of Business Management (NIBM)</p>
+          <li class="edu-item">
+            <div class="edu-deg">Diploma in Software Engineering</div>
+            <div class="edu-inst">National Institute of Business Management (NIBM)</div>
+            <div class="edu-meta">Completed</div>
           </li>
-          <li class="entry">
-            <p class="entry-when">Completed</p>
-            <h4 class="entry-title">Diploma in English</h4>
-            <p class="entry-org">University of Sri Jayewardenepura</p>
+          <li class="edu-item">
+            <div class="edu-deg">Diploma in English</div>
+            <div class="edu-inst">University of Sri Jayewardenepura</div>
+            <div class="edu-meta">Completed</div>
           </li>
         </ol>
       </div>
-
     </div>
   </div>
 </section>
@@ -423,8 +492,6 @@
         <div class="skill-group">
           <span class="skill-group-label">Tools</span>
           <div class="chips">
-            <span class="chip"><i class="fas fa-paper-plane" aria-hidden="true"></i> Postman</span>
-            <span class="chip"><i class="fas fa-bolt" aria-hidden="true"></i> Bruno</span>
             <span class="chip"><i class="fab fa-git-alt" aria-hidden="true"></i> Git &amp; GitHub</span>
             <span class="chip"><i class="fab fa-chrome" aria-hidden="true"></i> Chrome DevTools</span>
             <span class="chip"><i class="fab fa-figma" aria-hidden="true"></i> Figma</span>
@@ -461,6 +528,14 @@
           </div>
         </div>
 
+        <div class="skill-group">
+          <span class="skill-group-label">Other platforms</span>
+          <div class="chips">
+            <span class="chip"><i class="fab fa-android" aria-hidden="true"></i> Android</span>
+            <span class="chip"><i class="fas fa-microchip" aria-hidden="true"></i> Arduino / IoT</span>
+            <span class="chip"><i class="fas fa-brain" aria-hidden="true"></i> Machine Learning</span>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -525,10 +600,11 @@
 
       <article class="proj" data-tags="react java">
         <div class="proj-media">
+          <span class="proj-tech">React</span>
+          <span class="proj-kind">Security</span>
           <img src="assets/projects/file-monitoring.png" alt="File Behavior Monitoring System dashboard" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">Security</span>
           <h3 class="proj-title">File Behavior Monitoring System</h3>
           <p class="proj-desc">Real-time security tool that watches file activity and flags suspicious behaviour, built on Java's WatchService API with a React dashboard.</p>
           <div class="proj-stack"><span>React</span><span>Spring Boot</span><span>Java</span></div>
@@ -541,10 +617,11 @@
 
       <article class="proj" data-tags="python">
         <div class="proj-media">
+          <span class="proj-tech">Python</span>
+          <span class="proj-kind">Research</span>
           <img src="assets/projects/stress-prediction.png" alt="Mental health stress prediction model results" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">Research</span>
           <h3 class="proj-title">Mental Health Stress Prediction</h3>
           <p class="proj-desc">Comparative study of classification algorithms for stress prediction, with XGBoost delivering the strongest accuracy across the evaluated models.</p>
           <div class="proj-stack"><span>Python</span><span>XGBoost</span><span>HTML/CSS</span></div>
@@ -557,10 +634,11 @@
 
       <article class="proj" data-tags="php">
         <div class="proj-media">
+          <span class="proj-tech">PHP</span>
+          <span class="proj-kind">E-commerce</span>
           <img src="assets/projects/eshop.png" alt="E-Shop web application storefront" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">E-commerce</span>
           <h3 class="proj-title">E-Shop Web Application</h3>
           <p class="proj-desc">Full-stack e-commerce platform covering cart management, user authentication, and end-to-end order processing.</p>
           <div class="proj-stack"><span>PHP</span><span>JavaScript</span><span>MySQL</span></div>
@@ -573,10 +651,11 @@
 
       <article class="proj" data-tags="java android">
         <div class="proj-media">
+          <span class="proj-tech">Java</span>
+          <span class="proj-kind">Mobile</span>
           <img src="assets/projects/pizza-app.png" alt="Pizza ordering Android app screens" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">Mobile</span>
           <h3 class="proj-title">Pizza Ordering Android App</h3>
           <p class="proj-desc">Native Android app for browsing a menu, placing orders, and managing customer records with a Firebase backend.</p>
           <div class="proj-stack"><span>Java</span><span>Firebase</span><span>Android</span></div>
@@ -589,10 +668,11 @@
 
       <article class="proj" data-tags="java">
         <div class="proj-media">
+          <span class="proj-tech">Java</span>
+          <span class="proj-kind">Desktop</span>
           <img src="assets/projects/car-showroom.png" alt="Car showroom management system interface" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">Desktop</span>
           <h3 class="proj-title">Car Showroom Management</h3>
           <p class="proj-desc">Desktop application for managing vehicle inventory, customer records, and day-to-day showroom operations.</p>
           <div class="proj-stack"><span>Java</span><span>Swing</span><span>MySQL</span></div>
@@ -605,10 +685,11 @@
 
       <article class="proj" data-tags="java">
         <div class="proj-media">
+          <span class="proj-tech">Java</span>
+          <span class="proj-kind">Desktop</span>
           <img src="assets/projects/finance.png" alt="Personal finance management application" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">Desktop</span>
           <h3 class="proj-title">Personal Finance Management</h3>
           <p class="proj-desc">Tracks income, expenses, and financial records with persistent storage across SQLite and Oracle Database.</p>
           <div class="proj-stack"><span>Java</span><span>SQLite</span><span>Oracle</span></div>
@@ -621,10 +702,11 @@
 
       <article class="proj" data-tags="arduino">
         <div class="proj-media">
+          <span class="proj-tech">Arduino</span>
+          <span class="proj-kind">Robotics</span>
           <img src="assets/projects/rice-robot.png" alt="Automated rice cooking robot prototype" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">Robotics</span>
           <h3 class="proj-title">Automated Rice Cooking Robot</h3>
           <p class="proj-desc">Microcontroller-driven robot that automates the rice cooking cycle using temperature sensing and timed actuation.</p>
           <div class="proj-stack"><span>Arduino</span><span>C++</span><span>Sensors</span></div>
@@ -637,10 +719,11 @@
 
       <article class="proj" data-tags="arduino">
         <div class="proj-media">
+          <span class="proj-tech">Arduino</span>
+          <span class="proj-kind">IoT</span>
           <img src="assets/projects/landslide.png" alt="Landslide early warning system sensors" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">IoT</span>
           <h3 class="proj-title">Landslide Early Warning System</h3>
           <p class="proj-desc">IoT sensor network monitoring soil and environmental conditions to raise early landslide risk alerts.</p>
           <div class="proj-stack"><span>IoT</span><span>Arduino</span><span>Sensors</span></div>
@@ -653,10 +736,11 @@
 
       <article class="proj" data-tags="figma">
         <div class="proj-media">
+          <span class="proj-tech">Figma</span>
+          <span class="proj-kind">UI / UX</span>
           <img src="assets/projects/clothing-store.png" alt="Clothing store management UI design system" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">UI / UX</span>
           <h3 class="proj-title">Clothing Store Management UI</h3>
           <p class="proj-desc">End-to-end UI/UX design system for a retail management tool — wireframes through interactive prototypes and handoff documentation.</p>
           <div class="proj-stack"><span>Figma</span><span>Wireframing</span><span>Prototyping</span></div>
@@ -669,10 +753,11 @@
 
       <article class="proj" data-tags="">
         <div class="proj-media">
+          <span class="proj-tech">HTML5</span>
+          <span class="proj-kind">Web</span>
           <img src="assets/projects/tech-website.png" alt="Technology news website homepage" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">Web</span>
           <h3 class="proj-title">New Tech Website</h3>
           <p class="proj-desc">Responsive technology publication with article listings, review layouts, and an interactive reading experience.</p>
           <div class="proj-stack"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
@@ -695,38 +780,93 @@
     <div class="sec-head sec-head--center reveal">
       <span class="eyebrow">Credentials</span>
       <h2 class="sec-title">Licenses &amp; <em>certifications</em></h2>
-      <p class="sec-sub">Verified professional credentials.</p>
+      <p class="sec-sub">Verified credentials and ongoing coursework.</p>
     </div>
 
-    <ul class="cert-list reveal">
-      <li class="cert">
-        <i class="cert-ico fas fa-cloud" aria-hidden="true"></i>
-        <div class="cert-main">
+    <div class="cert-grid reveal-group">
+      <article class="cert">
+        <div class="cert-ico"><i class="fas fa-cloud" aria-hidden="true"></i></div>
+        <div class="cert-body">
           <h3 class="cert-name">Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</h3>
-          <p class="cert-org">Oracle</p>
+          <div class="cert-org">Oracle</div>
+          <div class="cert-foot">
+            <span class="badge badge--issued"><i class="fas fa-check" aria-hidden="true"></i> Issued</span>
+            <span class="cert-year">2025</span>
+          </div>
         </div>
-        <span class="cert-year">2025</span>
-        <span class="badge badge--issued">Issued</span>
-      </li>
-      <li class="cert">
-        <i class="cert-ico fab fa-aws" aria-hidden="true"></i>
-        <div class="cert-main">
+      </article>
+
+      <article class="cert">
+        <div class="cert-ico"><i class="fab fa-aws" aria-hidden="true"></i></div>
+        <div class="cert-body">
           <h3 class="cert-name">AWS Cloud Computing</h3>
-          <p class="cert-org">AWS Cloud Club ITUM</p>
+          <div class="cert-org">AWS Cloud Club ITUM</div>
+          <div class="cert-foot">
+            <span class="badge badge--issued"><i class="fas fa-check" aria-hidden="true"></i> Issued</span>
+            <span class="cert-year">2025</span>
+          </div>
         </div>
-        <span class="cert-year">2025</span>
-        <span class="badge badge--issued">Issued</span>
-      </li>
-      <li class="cert">
-        <i class="cert-ico fab fa-microsoft" aria-hidden="true"></i>
-        <div class="cert-main">
+      </article>
+
+      <article class="cert">
+        <div class="cert-ico"><i class="fab fa-microsoft" aria-hidden="true"></i></div>
+        <div class="cert-body">
           <h3 class="cert-name">Machine Learning in Azure</h3>
-          <p class="cert-org">Microsoft</p>
+          <div class="cert-org">Microsoft</div>
+          <div class="cert-foot">
+            <span class="badge badge--issued"><i class="fas fa-check" aria-hidden="true"></i> Issued</span>
+            <span class="cert-year">2024</span>
+          </div>
         </div>
-        <span class="cert-year">2024</span>
-        <span class="badge badge--issued">Issued</span>
-      </li>
-    </ul>
+      </article>
+
+      <article class="cert">
+        <div class="cert-ico"><i class="fas fa-pen-ruler" aria-hidden="true"></i></div>
+        <div class="cert-body">
+          <h3 class="cert-name">UI/UX Design Specialization</h3>
+          <div class="cert-org">Google via Coursera</div>
+          <div class="cert-foot">
+            <span class="badge badge--progress"><i class="fas fa-spinner" aria-hidden="true"></i> In progress</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="cert">
+        <div class="cert-ico"><i class="fab fa-figma" aria-hidden="true"></i></div>
+        <div class="cert-body">
+          <h3 class="cert-name">Figma for Beginners</h3>
+          <div class="cert-org">Udemy</div>
+          <div class="cert-foot">
+            <span class="badge badge--issued"><i class="fas fa-check" aria-hidden="true"></i> Issued</span>
+            <span class="cert-year">2023</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="cert">
+        <div class="cert-ico"><i class="fab fa-git-alt" aria-hidden="true"></i></div>
+        <div class="cert-body">
+          <h3 class="cert-name">Git &amp; GitHub Essentials</h3>
+          <div class="cert-org">LinkedIn Learning</div>
+          <div class="cert-foot">
+            <span class="badge badge--issued"><i class="fas fa-check" aria-hidden="true"></i> Issued</span>
+            <span class="cert-year">2023</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="cert">
+        <div class="cert-ico"><i class="fab fa-android" aria-hidden="true"></i></div>
+        <div class="cert-body">
+          <h3 class="cert-name">Android App Development with Java</h3>
+          <div class="cert-org">Udemy</div>
+          <div class="cert-foot">
+            <span class="badge badge--issued"><i class="fas fa-check" aria-hidden="true"></i> Issued</span>
+            <span class="cert-year">2023</span>
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -841,7 +981,7 @@
 </main>
 
 <!-- ══ FOOTER ═══════════════════════════════════════════════ -->
-<footer class="footer band">
+<footer class="footer">
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
@@ -909,6 +1049,8 @@
     </div>
   </div>
 </footer>
+
+</div><!-- /.canvas -->
 
 <button id="toTop" aria-label="Back to top">
   <i class="fas fa-arrow-up" aria-hidden="true"></i>

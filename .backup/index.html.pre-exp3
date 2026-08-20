@@ -147,12 +147,11 @@
             quality assurance practices that keep releases predictable.
           </p>
           <p>
-            Alongside my studies I'm interning at <strong>Arimac Digital</strong> as a Software
-            Engineer &amp; UI/UX Engineer, contributing frontend development and interface design
-            to client products including Sampath Bank, Hutch, Siddhify, and SherlockAI — plus
-            freelance full-stack work. That hands-on build experience is my advantage in QA: I know
-            how software is put together, where it tends to break, and how to write a defect report
-            a developer can actually act on.
+            Before QA, I interned at <strong>Arimac</strong> as a Software Engineer &amp; UI/UX
+            Engineer, contributing frontend development and interface design to client products
+            including Sampath Bank, Hutch, Siddhify, and SherlockAI — alongside freelance
+            full-stack work. That background is my advantage: I know how software is built, where
+            it tends to break, and how to write a defect report a developer can actually act on.
           </p>
           <p>
             I'm detail-oriented and genuinely curious — the kind of person who reads the edge case in
@@ -223,13 +222,14 @@
 
         <ol class="entries">
           <li class="entry entry--current">
-            <p class="entry-when">Mar 2026 — Present &middot; Full-time internship</p>
-            <h4 class="entry-title">Intern Software Engineer &amp; UI/UX</h4>
-            <p class="entry-org">Arimac Digital</p>
+            <!-- TODO: add dates in .entry-when, e.g. Jan 2025 — Jul 2025 -->
+            <p class="entry-when">Internship &middot; Sri Lanka</p>
+            <h4 class="entry-title">Intern Software Engineer &amp; UI/UX Engineer</h4>
+            <p class="entry-org">Arimac</p>
             <p class="entry-desc">
-              Working across two disciplines on live client products — building frontend
+              Worked across two disciplines on live client products — building frontend
               interfaces and designing the experiences behind them. Sitting on both sides of
-              the design-to-code handoff shows me where intent and implementation drift
+              the design-to-code handoff taught me where intent and implementation drift
               apart, which is exactly where defects tend to hide.
             </p>
 
@@ -251,22 +251,6 @@
                 <span class="ep-discs"><span class="disc disc--ux">UI/UX</span></span>
               </li>
             </ul>
-          </li>
-
-          <li class="entry entry--current">
-            <p class="entry-when">Oct 2025 — Present &middot; Membership</p>
-            <h4 class="entry-title">Student Member</h4>
-            <p class="entry-org">IEEE</p>
-          </li>
-
-          <li class="entry">
-            <p class="entry-when">Aug 2025 — Oct 2025 &middot; Volunteer</p>
-            <h4 class="entry-title">Organizing Committee — Delegates Handling Team</h4>
-            <p class="entry-org">NIBMCodeX</p>
-            <p class="entry-desc">
-              Handled delegate coordination for NIBMCodeX 1.0, a 24-hour inter-university
-              coding challenge held in Sri Lanka.
-            </p>
           </li>
         </ol>
       </div>
@@ -423,8 +407,6 @@
         <div class="skill-group">
           <span class="skill-group-label">Tools</span>
           <div class="chips">
-            <span class="chip"><i class="fas fa-paper-plane" aria-hidden="true"></i> Postman</span>
-            <span class="chip"><i class="fas fa-bolt" aria-hidden="true"></i> Bruno</span>
             <span class="chip"><i class="fab fa-git-alt" aria-hidden="true"></i> Git &amp; GitHub</span>
             <span class="chip"><i class="fab fa-chrome" aria-hidden="true"></i> Chrome DevTools</span>
             <span class="chip"><i class="fab fa-figma" aria-hidden="true"></i> Figma</span>
@@ -461,6 +443,14 @@
           </div>
         </div>
 
+        <div class="skill-group">
+          <span class="skill-group-label">Other platforms</span>
+          <div class="chips">
+            <span class="chip"><i class="fab fa-android" aria-hidden="true"></i> Android</span>
+            <span class="chip"><i class="fas fa-microchip" aria-hidden="true"></i> Arduino / IoT</span>
+            <span class="chip"><i class="fas fa-brain" aria-hidden="true"></i> Machine Learning</span>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -695,7 +685,7 @@
     <div class="sec-head sec-head--center reveal">
       <span class="eyebrow">Credentials</span>
       <h2 class="sec-title">Licenses &amp; <em>certifications</em></h2>
-      <p class="sec-sub">Verified professional credentials.</p>
+      <p class="sec-sub">Verified credentials and ongoing coursework.</p>
     </div>
 
     <ul class="cert-list reveal">
@@ -724,6 +714,42 @@
           <p class="cert-org">Microsoft</p>
         </div>
         <span class="cert-year">2024</span>
+        <span class="badge badge--issued">Issued</span>
+      </li>
+      <li class="cert">
+        <i class="cert-ico fas fa-pen-ruler" aria-hidden="true"></i>
+        <div class="cert-main">
+          <h3 class="cert-name">UI/UX Design Specialization</h3>
+          <p class="cert-org">Google via Coursera</p>
+        </div>
+        <span class="cert-year">—</span>
+        <span class="badge badge--progress">In progress</span>
+      </li>
+      <li class="cert">
+        <i class="cert-ico fab fa-figma" aria-hidden="true"></i>
+        <div class="cert-main">
+          <h3 class="cert-name">Figma for Beginners</h3>
+          <p class="cert-org">Udemy</p>
+        </div>
+        <span class="cert-year">2023</span>
+        <span class="badge badge--issued">Issued</span>
+      </li>
+      <li class="cert">
+        <i class="cert-ico fab fa-git-alt" aria-hidden="true"></i>
+        <div class="cert-main">
+          <h3 class="cert-name">Git &amp; GitHub Essentials</h3>
+          <p class="cert-org">LinkedIn Learning</p>
+        </div>
+        <span class="cert-year">2023</span>
+        <span class="badge badge--issued">Issued</span>
+      </li>
+      <li class="cert">
+        <i class="cert-ico fab fa-android" aria-hidden="true"></i>
+        <div class="cert-main">
+          <h3 class="cert-name">Android App Development with Java</h3>
+          <p class="cert-org">Udemy</p>
+        </div>
+        <span class="cert-year">2023</span>
         <span class="badge badge--issued">Issued</span>
       </li>
     </ul>
