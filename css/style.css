@@ -968,7 +968,9 @@ textarea.input { resize: vertical; min-height: 130px; }
   .foot-brand { grid-column: 1 / -1; }
 }
 
-@media (max-width: 900px) {
+/* Eight nav links + brand + actions need ~1010px. Below that the desktop
+   row gets squeezed, so the burger takes over well before it breaks. */
+@media (max-width: 1023px) {
   .nav-menu {
     position: fixed;
     inset: var(--nav-h) 0 auto;
@@ -986,12 +988,11 @@ textarea.input { resize: vertical; min-height: 130px; }
 
   .burger { display: grid; }
   .nav-cta { display: none; }
+}
 
+@media (max-width: 900px) {
   .hero { padding: calc(var(--nav-h) + 40px) 0 56px; }
-  /* rail drops below the statement + portrait pair */
   .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr); gap: 40px; }
-
-
   .about-grid, .contact-grid { grid-template-columns: 1fr; }
 }
 

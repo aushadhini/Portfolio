@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aushadhini.github.io/sitemap.xml

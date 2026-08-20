@@ -1,0 +1,22 @@
+# OS cruft
+.DS_Store
+**/.DS_Store
+
+# editor
+.vscode/
+
+# local working backups (not part of the site)
+.backup/
+
+# stray nested clone of this repo
+/Portfolio/
+
+# Superseded sub-pages. The redesign replaced their CSS classes, so they
+# render unstyled. Nothing links to them; kept locally, not published.
+/pages/
+
+# Assets not referenced by the site (kept locally)
+/assets/events/
+/assets/profile/me.jpeg
+/assets/profile/me1.png
+/assets/profile/favicon.png
