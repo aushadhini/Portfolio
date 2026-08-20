@@ -143,6 +143,12 @@
     var filters = document.querySelectorAll('.filter');
     var projects = Array.prototype.slice.call(document.querySelectorAll('.proj'));
     var projEmpty = document.getElementById('projEmpty');
+    var projCount = document.getElementById('projCount');
+
+    var setCount = function (n) {
+      if (projCount) projCount.textContent = n + (n === 1 ? ' project' : ' projects');
+    };
+    setCount(projects.length);
 
     filters.forEach(function (btn) {
       btn.addEventListener('click', function () {
@@ -164,6 +170,7 @@
         });
 
         if (projEmpty) projEmpty.hidden = shown > 0;
+        setCount(shown);
       });
     });
 

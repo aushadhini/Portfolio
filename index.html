@@ -511,25 +511,31 @@
       <p class="sec-sub">Applications I've designed, built, and tested — across web, mobile, desktop, and embedded systems.</p>
     </div>
 
-    <div class="filters reveal" role="group" aria-label="Filter projects by technology">
-      <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
-      <button class="filter" data-filter="react" aria-pressed="false">React</button>
-      <button class="filter" data-filter="java" aria-pressed="false">Java</button>
-      <button class="filter" data-filter="python" aria-pressed="false">Python</button>
-      <button class="filter" data-filter="php" aria-pressed="false">PHP</button>
-      <button class="filter" data-filter="figma" aria-pressed="false">Figma</button>
-      <button class="filter" data-filter="arduino" aria-pressed="false">Arduino</button>
-      <button class="filter" data-filter="android" aria-pressed="false">Android</button>
+    <div class="proj-bar reveal">
+      <div class="filters" role="group" aria-label="Filter projects by technology">
+        <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" data-filter="react" aria-pressed="false">React</button>
+        <button class="filter" data-filter="java" aria-pressed="false">Java</button>
+        <button class="filter" data-filter="python" aria-pressed="false">Python</button>
+        <button class="filter" data-filter="php" aria-pressed="false">PHP</button>
+        <button class="filter" data-filter="figma" aria-pressed="false">Figma</button>
+        <button class="filter" data-filter="arduino" aria-pressed="false">Arduino</button>
+        <button class="filter" data-filter="android" aria-pressed="false">Android</button>
+      </div>
+      <p class="proj-count" id="projCount" aria-live="polite">10 projects</p>
     </div>
 
-    <div class="proj-grid" id="projGrid">
+    <div class="proj-grid reveal" id="projGrid">
 
       <article class="proj" data-tags="react java">
         <div class="proj-media">
           <img src="assets/projects/file-monitoring.png" alt="File Behavior Monitoring System dashboard" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">Security</span>
+          <div class="proj-head">
+            <span class="proj-kind">Security</span>
+            <span class="proj-num" aria-hidden="true"></span>
+          </div>
           <h3 class="proj-title">File Behavior Monitoring System</h3>
           <p class="proj-desc">Real-time security tool that watches file activity and flags suspicious behaviour, built on Java's WatchService API with a React dashboard.</p>
           <div class="proj-stack"><span>React</span><span>Spring Boot</span><span>Java</span></div>
@@ -545,7 +551,10 @@
           <img src="assets/projects/stress-prediction.png" alt="Mental health stress prediction model results" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">Research</span>
+          <div class="proj-head">
+            <span class="proj-kind">Research</span>
+            <span class="proj-num" aria-hidden="true"></span>
+          </div>
           <h3 class="proj-title">Mental Health Stress Prediction</h3>
           <p class="proj-desc">Comparative study of classification algorithms for stress prediction, with XGBoost delivering the strongest accuracy across the evaluated models.</p>
           <div class="proj-stack"><span>Python</span><span>XGBoost</span><span>HTML/CSS</span></div>
@@ -561,7 +570,10 @@
           <img src="assets/projects/eshop.png" alt="E-Shop web application storefront" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">E-commerce</span>
+          <div class="proj-head">
+            <span class="proj-kind">E-commerce</span>
+            <span class="proj-num" aria-hidden="true"></span>
+          </div>
           <h3 class="proj-title">E-Shop Web Application</h3>
           <p class="proj-desc">Full-stack e-commerce platform covering cart management, user authentication, and end-to-end order processing.</p>
           <div class="proj-stack"><span>PHP</span><span>JavaScript</span><span>MySQL</span></div>
@@ -577,7 +589,10 @@
           <img src="assets/projects/pizza-app.png" alt="Pizza ordering Android app screens" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">Mobile</span>
+          <div class="proj-head">
+            <span class="proj-kind">Mobile</span>
+            <span class="proj-num" aria-hidden="true"></span>
+          </div>
           <h3 class="proj-title">Pizza Ordering Android App</h3>
           <p class="proj-desc">Native Android app for browsing a menu, placing orders, and managing customer records with a Firebase backend.</p>
           <div class="proj-stack"><span>Java</span><span>Firebase</span><span>Android</span></div>
@@ -593,7 +608,10 @@
           <img src="assets/projects/car-showroom.png" alt="Car showroom management system interface" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">Desktop</span>
+          <div class="proj-head">
+            <span class="proj-kind">Desktop</span>
+            <span class="proj-num" aria-hidden="true"></span>
+          </div>
           <h3 class="proj-title">Car Showroom Management</h3>
           <p class="proj-desc">Desktop application for managing vehicle inventory, customer records, and day-to-day showroom operations.</p>
           <div class="proj-stack"><span>Java</span><span>Swing</span><span>MySQL</span></div>
@@ -609,7 +627,10 @@
           <img src="assets/projects/finance.png" alt="Personal finance management application" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">Desktop</span>
+          <div class="proj-head">
+            <span class="proj-kind">Desktop</span>
+            <span class="proj-num" aria-hidden="true"></span>
+          </div>
           <h3 class="proj-title">Personal Finance Management</h3>
           <p class="proj-desc">Tracks income, expenses, and financial records with persistent storage across SQLite and Oracle Database.</p>
           <div class="proj-stack"><span>Java</span><span>SQLite</span><span>Oracle</span></div>
@@ -625,7 +646,10 @@
           <img src="assets/projects/rice-robot.png" alt="Automated rice cooking robot prototype" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">Robotics</span>
+          <div class="proj-head">
+            <span class="proj-kind">Robotics</span>
+            <span class="proj-num" aria-hidden="true"></span>
+          </div>
           <h3 class="proj-title">Automated Rice Cooking Robot</h3>
           <p class="proj-desc">Microcontroller-driven robot that automates the rice cooking cycle using temperature sensing and timed actuation.</p>
           <div class="proj-stack"><span>Arduino</span><span>C++</span><span>Sensors</span></div>
@@ -641,7 +665,10 @@
           <img src="assets/projects/landslide.png" alt="Landslide early warning system sensors" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">IoT</span>
+          <div class="proj-head">
+            <span class="proj-kind">IoT</span>
+            <span class="proj-num" aria-hidden="true"></span>
+          </div>
           <h3 class="proj-title">Landslide Early Warning System</h3>
           <p class="proj-desc">IoT sensor network monitoring soil and environmental conditions to raise early landslide risk alerts.</p>
           <div class="proj-stack"><span>IoT</span><span>Arduino</span><span>Sensors</span></div>
@@ -657,7 +684,10 @@
           <img src="assets/projects/clothing-store.png" alt="Clothing store management UI design system" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">UI / UX</span>
+          <div class="proj-head">
+            <span class="proj-kind proj-kind--alt">UI / UX</span>
+            <span class="proj-num" aria-hidden="true"></span>
+          </div>
           <h3 class="proj-title">Clothing Store Management UI</h3>
           <p class="proj-desc">End-to-end UI/UX design system for a retail management tool — wireframes through interactive prototypes and handoff documentation.</p>
           <div class="proj-stack"><span>Figma</span><span>Wireframing</span><span>Prototyping</span></div>
@@ -673,7 +703,10 @@
           <img src="assets/projects/tech-website.png" alt="Technology news website homepage" loading="lazy">
         </div>
         <div class="proj-body">
-          <span class="proj-kind">Web</span>
+          <div class="proj-head">
+            <span class="proj-kind">Web</span>
+            <span class="proj-num" aria-hidden="true"></span>
+          </div>
           <h3 class="proj-title">New Tech Website</h3>
           <p class="proj-desc">Responsive technology publication with article listings, review layouts, and an interactive reading experience.</p>
           <div class="proj-stack"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
