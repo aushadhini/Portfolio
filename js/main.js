@@ -15,7 +15,7 @@
 
     function syncThemeButton() {
       if (!themeBtn) return;
-      var isDark = root.getAttribute('data-theme') === 'dark';
+      var isDark = root.dataset.theme === 'dark';
       themeBtn.innerHTML = isDark
         ? '<i class="fas fa-sun" aria-hidden="true"></i>'
         : '<i class="fas fa-moon" aria-hidden="true"></i>';
@@ -26,8 +26,8 @@
 
     if (themeBtn) {
       themeBtn.addEventListener('click', function () {
-        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', next);
+        var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
         localStorage.setItem('nk-theme', next);
         syncThemeButton();
       });
@@ -36,7 +36,7 @@
     /* Follow the OS theme only while the visitor has no explicit preference */
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
       if (localStorage.getItem('nk-theme')) return;
-      root.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+      root.dataset.theme = e.matches ? 'dark' : 'light';
       syncThemeButton();
     });
 

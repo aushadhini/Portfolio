@@ -30,20 +30,22 @@
 <link rel="shortcut icon" href="assets/profile/favicon1.png">
 <link rel="apple-touch-icon" href="assets/profile/favicon1.png">
 
-<!-- Fonts: Bodoni Moda (large display only) · Inter (UI + body) · JetBrains Mono (code-adjacent) -->
+<!-- Fonts: Bodoni Moda (large display only) · Inter (UI, labels + body) · JetBrains Mono (code-adjacent) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/style.css?v=20260821">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css?v=20260821b">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer">
 
 <!-- Set theme before first paint so there is no flash of the wrong theme -->
 <script>
   (function () {
     var saved = localStorage.getItem('nk-theme');
     var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.dataset.theme = theme;
   })();
 </script>
 </head>
@@ -512,7 +514,7 @@
     </div>
 
     <div class="proj-bar reveal">
-      <div class="filters" role="group" aria-label="Filter projects by technology">
+      <fieldset class="filters" aria-label="Filter projects by technology">
         <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
         <button class="filter" data-filter="react" aria-pressed="false">React</button>
         <button class="filter" data-filter="java" aria-pressed="false">Java</button>
@@ -521,7 +523,7 @@
         <button class="filter" data-filter="figma" aria-pressed="false">Figma</button>
         <button class="filter" data-filter="arduino" aria-pressed="false">Arduino</button>
         <button class="filter" data-filter="android" aria-pressed="false">Android</button>
-      </div>
+      </fieldset>
       <p class="proj-count" id="projCount" aria-live="polite">10 projects</p>
     </div>
 
@@ -865,7 +867,7 @@
           <i class="fas fa-paper-plane" aria-hidden="true"></i> Send message
         </button>
 
-        <p class="form-status" id="cfStatus" role="status" aria-live="polite"></p>
+        <output class="form-status" id="cfStatus" aria-live="polite"></output>
         <p class="form-note">Or email me directly at niragiaushadhini@gmail.com</p>
       </form>
     </div>
@@ -948,6 +950,6 @@
   <i class="fas fa-arrow-up" aria-hidden="true"></i>
 </button>
 
-<script src="js/main.js?v=20260821"></script>
+<script src="js/main.js?v=20260821b"></script>
 </body>
 </html>
